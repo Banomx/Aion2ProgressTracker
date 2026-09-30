@@ -25,6 +25,7 @@ Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting em
 - `checks`: completion flags keyed by stable route ID or checklist, character and task ID.
 - `characters`: main name, alt count and retained alt names.
 - `itemLevels`: optional non-negative numeric iLvL values keyed by `main` or alt slot.
+- `timers`: optional Shugo, Rift, Watcher Kaira and Daily schedules, stored as UTC minutes of day.
 - `settings`: UTC reset hour, weekly day and automatic-reset toggle.
 - `periods`: daily and weekly reset dates.
 
@@ -37,6 +38,14 @@ Storage belongs to the browser profile and site origin. A different device, brow
 JSON exports contain `format: "aion2-progress-tracker"`, `version: 2`, `exportedAt` and `state`. Imports validate structure, values and a 1 MB size limit, then require confirmation before replacing saved state. Invalid imports leave existing data intact. Older states without character settings default to the original main and three alts. States/backups without `itemLevels` default to unset values. Blank iLvL inputs clear the saved value; zero and fractional values are supported. Values are included in version-2 backups and validated on import.
 
 Automatic resets are off by default. When enabled, they run on load, when the page becomes visible and on a one-minute interval while open. Daily/weekly resets clear checklist flags across characters; route milestones remain. Manual resets affect only the selected checklist and character. Sidebar cards track task completion, not ticket counts or currency balances.
+
+## Spawn timers
+
+The header shows live countdowns and dropdowns with the next three occurrences in the browser’s local timezone. Users may override with comma-separated `HH:MM` UTC times; blank fields revert to defaults. Shugo and Rift show an active-window countdown; Rift still has a ten-minute portal window. Daily dropdown also shows the weekly reset. Defaults come from QuestLog’s explicit Global UTC schedule, not screenshot countdowns. Timer schedules are independent of automatic checklist resets and are included in version-2 backups. Older states missing `timers` use QuestLog defaults without altering existing data. Invalid schedules are rejected before saving/importing. Countdowns derive from the current clock on each tick, so a suspended tab catches up when visible.
+
+`scripts/refresh-schedules.mjs` fetches the four requested QuestLog pages, discovers their current app/route modules, and verifies they share one schedule module. Acorn parses that module as data; remote code is never executed. It accepts only explicit Global/UTC times, bounded durations and weekdays, and fails closed on unsupported/ambiguous formats. All five required events must validate before replacing `site/schedules.js` or the cached snapshot. This verifies agreement with QuestLog, not independent in-game accuracy.
+
+Hourly/push/manual builds restore `.cache/questlog-schedule.json` through Actions cache and refresh the schedules before testing/building. On source failures, builds retain the newest valid cached/bundled snapshot and add an Actions warning/summary. The UI shows its checked timestamp and marks it overdue after two hours. If the cache has been evicted, the bundled validated snapshot remains the fallback. PR builds stay offline and cannot write the main snapshot cache.
 
 ## Build and deployment
 

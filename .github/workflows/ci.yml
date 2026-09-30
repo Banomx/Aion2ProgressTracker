@@ -29,12 +29,28 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Restore last validated QuestLog snapshot
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/questlog-schedule.json
+          key: questlog-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: questlog-v1-
+      - name: Check QuestLog schedules
+        if: github.event_name != 'pull_request'
+        run: node scripts/refresh-schedules.mjs
       - name: Test tracker
         run: npm test
       - name: Build static site
         run: npm run build
       - name: Validate artifact
         run: npm run validate
+      - name: Cache validated QuestLog snapshot
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/questlog-schedule.json
+          key: questlog-v1-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

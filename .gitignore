@@ -3,3 +3,5 @@ dist/
 site.tar.gz
 .sites-runtime/
 .env
+
+.cache/
