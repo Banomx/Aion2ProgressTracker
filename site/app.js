@@ -95,3 +95,6 @@ el('timers-form').addEventListener('submit',event=>{
 });
 setInterval(()=>{if(ready)updateTimers()},1000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ready)updateTimers()});
+
+// Header wraps on smaller screens; measure it so sticky cards stay below it.
+if(typeof ResizeObserver!=='undefined'){const header=document.querySelector('header');new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',header.getBoundingClientRect().height+'px')).observe(header)}
