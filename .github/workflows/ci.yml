@@ -1,41 +1,57 @@
-name: Tracker checks
+name: Tracker checks and GitHub Pages deploy
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: tracker-checks-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
       - name: Check out source
         uses: actions/checkout@v6
-
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: "24"
+          node-version: '24'
           cache: npm
-
-      - name: Install locked dependencies
+      - name: Install dependencies
         run: npm ci
-
-      - name: Test checklist behavior
+      - name: Test tracker
         run: npm test
-
-      - name: Build Worker
+      - name: Build static site
         run: npm run build
-
-      - name: Validate deployment artifact
+      - name: Validate artifact
         run: npm run validate
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
