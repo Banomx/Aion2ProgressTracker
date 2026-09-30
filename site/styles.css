@@ -5,3 +5,5 @@
 .rail{max-height:calc(100dvh - 40px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}.rail .panel:last-child{margin-bottom:0}@media(max-width:900px){.rail{max-height:none;overflow:visible}}
 
 .controls .ilvl-label{margin-top:10px}.ilvl-input{display:block;width:100%;max-width:240px;padding:8px 12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px}.alt-fields{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:12px}.alt-fields .setting{min-width:0}@media(max-width:580px){.ilvl-input{max-width:none}}
+
+.task p.task-reminder{color:var(--gold)}

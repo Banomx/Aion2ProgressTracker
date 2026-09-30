@@ -16,7 +16,7 @@ Guide content combines the video and reviewed text guide. Global-specific assump
 
 Route entries use stable IDs independently of display order. Preserve existing IDs when editing or inserting milestones so saved completions keep their meaning. Update the route-ID validation in `normalizeState()` when adding IDs beyond its accepted range.
 
-Daily tasks render in Daily, Scheduled, Routine and Accumulating groups. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts and scheduled events. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared.
+Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting empty groups. Shugo Festival/Invasion keys are listed under Daily with a reminder that entries can be saved and do not all need to be used in one day. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts and scheduled events. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared.
 
 ## Storage and backups
 

@@ -165,6 +165,14 @@ const DATA = {
       "Daily"
     ],
     [
+      "festival",
+      "Shugo Festival / Invasion keys",
+      "Early on, use keys on the max-level main. Three keys regenerate daily per server and can accumulate for about a week: do not let the stock cap. Good Odyle and Refining Stone rewards. Choose Daevanion Crystals first, then Stigma Shards.",
+      1801,
+      "Daily",
+      "You don’t need to use all entries in one day—just avoid reaching the stock cap."
+    ],
+    [
       "events",
       "Attend time-sensitive reward events",
       "Prioritize sieges, Abyss world bosses and battlegrounds for medals and long-term rewards. Use Abyss corridors when your faction controls the required artifacts; skip pointless open-world PvP grinding.",
@@ -205,13 +213,6 @@ const DATA = {
       "Defer dedicated pet/Insight farming until the early gear route is established. When you have spare time, combine it with the one-million daily open-world Kina cap. Gold drops may be worth selling early; keep useful pieces for Soul Bind/Transfer later.",
       1961,
       "Routine"
-    ],
-    [
-      "festival",
-      "Shugo Festival / Invasion keys",
-      "Early on, use keys on the max-level main. Three keys regenerate daily per server and can accumulate for about a week: do not let the stock cap. Good Odyle and Refining Stone rewards. Choose Daevanion Crystals first, then Stigma Shards.",
-      1801,
-      "Accumulating"
     ]
   ],
   "weekly": [
