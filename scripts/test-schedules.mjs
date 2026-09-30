@@ -11,8 +11,8 @@ async function mock(url){requests.push(url);if(pages.includes(url))return '<scri
 assert.deepEqual((await fetchSchedules(mock)).events,snapshot.events);assert.ok(pages.every(page=>requests.includes(page)));assert.equal(requests.filter(url=>url===base+'shared.js').length,1);
 const folder=await mkdtemp(join(tmpdir(),'aion-schedule-test-'));try{
  const sitePath=join(folder,'schedules.js'),cachePath=join(folder,'cache/snapshot.json');await writeFile(sitePath,'const QUESTLOG_SCHEDULE = '+JSON.stringify(snapshot)+';\n');
- const fresh=await refresh({fetchText:mock,sitePath,cachePath});assert.equal(fresh.fresh,true);
- const saved=await readFile(cachePath,'utf8');const failed=await refresh({fetchText:async()=>{throw Error('source unavailable')},sitePath,cachePath});assert.equal(failed.fresh,false);assert.deepEqual(failed.data,fresh.data);assert.equal(await readFile(cachePath,'utf8'),saved);
+ const fresh=await refresh({fetchText:mock,sitePath,cachePath,report:false});assert.equal(fresh.fresh,true);
+ const saved=await readFile(cachePath,'utf8');const failed=await refresh({fetchText:async()=>{throw Error('source unavailable')},sitePath,cachePath,report:false});assert.equal(failed.fresh,false);assert.deepEqual(failed.data,fresh.data);assert.equal(await readFile(cachePath,'utf8'),saved);
  assert.match(await readFile(sitePath,'utf8'),/QUESTLOG_SCHEDULE/);
 }finally{await rm(folder,{recursive:true,force:true})}
 console.log('Passed: source discovery, Global UTC extraction, validation and last-good fallback.');

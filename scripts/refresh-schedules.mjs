@@ -73,14 +73,14 @@ export async function fetchSchedules(fetchText=download){
   if(new Set(modules).size!==1)throw Error('Pages disagree on schedule source');
   return extractSchedules(await get(modules[0]));
 }
-export async function refresh({fetchText=download,cachePath='.cache/questlog-schedule.json',sitePath='site/schedules.js'}={}){
+export async function refresh({fetchText=download,cachePath='.cache/questlog-schedule.json',sitePath='site/schedules.js',report=true}={}){
   const bundled=JSON.parse((await readFile(sitePath,'utf8')).replace(/^const QUESTLOG_SCHEDULE = /,'').replace(/;\s*$/,''));let previous=validateSnapshot(bundled);
   try{const cached=validateSnapshot(JSON.parse(await readFile(cachePath,'utf8')));if(Date.parse(cached.checkedAt)>Date.parse(previous.checkedAt))previous=cached}catch{}
   let data=previous,fresh=false;
-  try{data=await fetchSchedules(fetchText);fresh=true;await mkdir(dirname(cachePath),{recursive:true});await writeFile(cachePath,JSON.stringify(data));console.log('QuestLog Global schedule validated across all four pages.')}
-  catch(error){console.warn('::warning::QuestLog schedule check failed; retaining last validated data. '+error.message)}
+  try{data=await fetchSchedules(fetchText);fresh=true;await mkdir(dirname(cachePath),{recursive:true});await writeFile(cachePath,JSON.stringify(data));if(report)console.log('QuestLog Global schedule validated across all four pages.')}
+  catch(error){if(report)console.warn('::warning::QuestLog schedule check failed; retaining last validated data. '+error.message)}
   await writeFile(sitePath,'const QUESTLOG_SCHEDULE = '+JSON.stringify(data,null,2)+';\n');
-  if(process.env.GITHUB_STEP_SUMMARY)await appendFile(process.env.GITHUB_STEP_SUMMARY,`\n### QuestLog schedule check\n${fresh?'Validated all four source pages.':'Source check failed; using the last validated snapshot.'}\nLast validated: ${data.checkedAt}\n`);
+  if(report&&process.env.GITHUB_STEP_SUMMARY)await appendFile(process.env.GITHUB_STEP_SUMMARY,`\n### QuestLog schedule check\n${fresh?'Validated all four source pages.':'Source check failed; using the last validated snapshot.'}\nLast validated: ${data.checkedAt}\n`);
   return {fresh,data};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await refresh();
