@@ -16,7 +16,7 @@ Guide content combines the video and reviewed text guide. Global-specific assump
 
 Route entries use stable IDs independently of display order. Preserve existing IDs when editing or inserting milestones so saved completions keep their meaning. Update the route-ID validation in `normalizeState()` when adding IDs beyond its accepted range.
 
-Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting empty groups. Shugo Festival/Invasion keys are listed under Daily with a reminder that entries can be saved and do not all need to be used in one day. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts and scheduled events. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared.
+Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting empty groups. Shugo Festival/Invasion keys are listed under Daily with a reminder that entries can be saved and do not all need to be used in one day. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts and scheduled events. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared. On wide screens, energy/milestone reference and reset settings sit to the right of the progression cards; narrower screens stack the columns.
 
 ## Storage and backups
 
@@ -29,6 +29,8 @@ Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting em
 - `periods`: daily and weekly reset dates.
 
 Alt slots have stable keys (`alt1` through `alt50`). Reducing the count hides slots without deleting their names, item levels or progress. Names are rendered as text or escaped before insertion into HTML.
+
+Deployments do not clear storage. Keep the storage key and existing task/character IDs stable, and accept older states when adding fields. Layout changes and task reordering preserve saved checks; changed schemas require backward-compatible normalization.
 
 Storage belongs to the browser profile and site origin. A different device, browser or hosting address has separate progress. No progress is sent to a backend. Storage failures show an error while keeping changes on screen so users can export or retry.
 

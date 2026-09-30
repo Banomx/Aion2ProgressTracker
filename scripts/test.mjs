@@ -30,6 +30,16 @@ assert.equal(originalProgress.d.querySelector('[role=progressbar]').getAttribute
 const statue=originalProgress.d.querySelector('[data-id="9"]');statue.checked=true;statue.dispatchEvent(new originalProgress.w.Event('change',{bubbles:true}));
 const statueReload=await open(originalProgress.w.localStorage.getItem(storageKey));assert.equal(statueReload.d.querySelector('[data-id="9"]').checked,true);
 originalProgress.d.querySelector('[data-view="weekly"]').click();assert.match(originalProgress.d.querySelector('#check-nightmare').closest('.task').textContent,/14,000 Nightmare Tokens/);assert.match(originalProgress.d.querySelector('#check-nightmare').closest('.task').textContent,/Unique: Zikel’s Apparition/);
+// Deployment reloads retain all fields, including hidden alt slots and stable task IDs.
+const deploymentState={checks:{'route:2':true,'daily:main:festival':true,'weekly:alt6:nightmare':true},characters:{main:'Saved main',altCount:1,alts:['Visible alt','Alt 2','Alt 3','Alt 4','Alt 5','Hidden alt']},itemLevels:{main:1900.5,alt6:2100},settings:{hour:7,day:2,auto:false},periods:{daily:'2026-09-01',weekly:'2026-09-01'}};
+const deploymentReload=await open(deploymentState);
+assert.deepEqual(JSON.parse(deploymentReload.w.localStorage.getItem(storageKey)),deploymentState);
+assert.equal(deploymentReload.d.querySelector('header a'),null);
+assert.ok(deploymentReload.d.querySelector('.tracker-summary #daily-count'));
+assert.ok(deploymentReload.d.querySelector('.tracker-info #reset-hour'));
+deploymentReload.d.querySelector('[data-view="daily"]').click();assert.equal(deploymentReload.d.getElementById('check-festival').checked,true);
+deploymentReload.d.getElementById('check-duties').checked=true;deploymentReload.d.getElementById('check-duties').dispatchEvent(new deploymentReload.w.Event('change',{bubbles:true}));
+assert.deepEqual(JSON.parse(deploymentReload.w.localStorage.getItem(storageKey)),{...deploymentState,checks:{...deploymentState.checks,'daily:main:duties':true}});
 const corrupt=await open('{broken');assert.equal(corrupt.w.localStorage.getItem(storageKey),'{broken');assert.equal(corrupt.d.getElementById('import-data').disabled,false);
 const storage=w.localStorage;Object.defineProperty(w,'localStorage',{configurable:true,value:{getItem:storage.getItem.bind(storage),setItem(){throw Error('quota')}}});d.querySelector('[data-view="route"]').click();input=d.querySelector('[data-group="route"]');input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));assert.match(d.getElementById('status').textContent,/storage is unavailable/);assert.equal(d.getElementById('export-data').disabled,false);Object.defineProperty(w,'localStorage',{configurable:true,value:storage});d.getElementById('retry').click();assert.match(d.getElementById('status').textContent,/Saved/);
 assert.equal(requests.length,0);for(const win of windows){await win.happyDOM.abort();win.close()}console.log('Passed: local persistence, names and alt counts, per-character checklists, safe text, backup import/export, invalid imports, resets and storage failures.');
