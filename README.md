@@ -6,7 +6,7 @@ Progression routes and character checklists based on [Madsin's video](https://ww
 
 ## Basic usage
 
-- **Manage characters:** name your main and choose 0–50 named alts.
+- **Manage characters:** name your main and choose 0–50 named alts. Enter each character's **iLvL** here or in the selected-character field.
 - Check off shared route milestones and per-character daily/weekly tasks. Sidebar cards show completion counts, progress bars and the next unfinished entry.
 - Progress saves in your browser. Use **Export backup** and **Import backup** to move it between browsers or devices; clearing site data removes local progress.
 - Optional resets use the UTC hour and weekly day you configure. Confirm your server's schedule in game before enabling them.

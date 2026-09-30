@@ -24,14 +24,15 @@ Daily tasks render in Daily, Scheduled, Routine and Accumulating groups. Weekly 
 
 - `checks`: completion flags keyed by stable route ID or checklist, character and task ID.
 - `characters`: main name, alt count and retained alt names.
+- `itemLevels`: optional non-negative numeric iLvL values keyed by `main` or alt slot.
 - `settings`: UTC reset hour, weekly day and automatic-reset toggle.
 - `periods`: daily and weekly reset dates.
 
-Alt slots have stable keys (`alt1` through `alt50`). Reducing the count hides slots without deleting their names or progress. Names are rendered as text or escaped before insertion into HTML.
+Alt slots have stable keys (`alt1` through `alt50`). Reducing the count hides slots without deleting their names, item levels or progress. Names are rendered as text or escaped before insertion into HTML.
 
 Storage belongs to the browser profile and site origin. A different device, browser or hosting address has separate progress. No progress is sent to a backend. Storage failures show an error while keeping changes on screen so users can export or retry.
 
-JSON exports contain `format: "aion2-progress-tracker"`, `version: 2`, `exportedAt` and `state`. Imports validate structure, values and a 1 MB size limit, then require confirmation before replacing saved state. Invalid imports leave existing data intact. Older states without character settings default to the original main and three alts.
+JSON exports contain `format: "aion2-progress-tracker"`, `version: 2`, `exportedAt` and `state`. Imports validate structure, values and a 1 MB size limit, then require confirmation before replacing saved state. Invalid imports leave existing data intact. Older states without character settings default to the original main and three alts. States/backups without `itemLevels` default to unset values. Blank iLvL inputs clear the saved value; zero and fractional values are supported. Values are included in version-2 backups and validated on import.
 
 Automatic resets are off by default. When enabled, they run on load, when the page becomes visible and on a one-minute interval while open. Daily/weekly resets clear checklist flags across characters; route milestones remain. Manual resets affect only the selected checklist and character. Sidebar cards track task completion, not ticket counts or currency balances.
 
