@@ -12,11 +12,13 @@ GitHub Pages serves the files from `site/`. All interactions run in the browser;
 | `site/styles.css` | Layout and responsive styles |
 | `site/favicon.svg` | Site icon |
 
-Guide content combines the video and reviewed text guide. Global-specific assumptions remain labeled. Video links point to relevant sections; the detailed reviewed notes are not a transcript of each linked timestamp.
+Guide content combines the video and reviewed text guide. Daily/weekly limits now cite Skycoach’s 2026-09-30 checklist; TalentBuilds only supplements rewards for activities already present. Its conflicting schedule/cap/entry-level figures are not adopted. Global-specific assumptions remain labeled. Video links point to relevant sections; the detailed reviewed notes are not a transcript of each linked timestamp.
+
+Task metadata at array index 6 supplies optional guide-limit and collapsed reward notes, with links to the relevant sources. Existing daily/weekly task IDs and total counts stay unchanged. Skycoach’s two Shugo keys per day replaces the original three-key text; Daily Dungeon’s shared weekly entry pool replaces the earlier alt-entry advice. Live timers and reviewed route thresholds remain unchanged.
 
 Route entries use stable IDs independently of display order. Preserve existing IDs when editing or inserting milestones so saved completions keep their meaning. Update the route-ID validation in `normalizeState()` when adding IDs beyond its accepted range.
 
-Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting empty groups. Shugo Festival/Invasion keys are listed under Daily with a reminder that entries can be saved and do not all need to be used in one day. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts and scheduled events. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared. On wide screens, energy/milestone reference and reset settings sit to the right of the progression cards; narrower screens stack the columns.
+Daily tasks use Daily, Scheduled, Routine and Accumulating ordering, omitting empty groups. Shugo Festival/Invasion keys are listed under Daily with a reminder that entries can be saved and do not all need to be used in one day. Weekly tasks group reset purchases, subscription purchases, ongoing requests, late-week attempts, scheduled events and accumulating Nightmare tickets. Task badges distinguish server-wide and per-character game limits; completion flags remain per character, so server-wide badges do not imply shared checkbox synchronization. Nightmare is a planning reminder, not a weekly-expiring resource. Sidebar counts and next-entry labels derive from the selected character's saved checks; route progress is shared. On wide screens, energy/milestone reference and reset settings sit to the right of the progression cards; narrower screens stack the columns.
 
 ## Storage and backups
 

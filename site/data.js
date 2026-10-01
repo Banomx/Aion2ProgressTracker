@@ -155,7 +155,12 @@ const DATA = {
       "Complete five level-45 Duty quests",
       "Prioritize Pet Souls and Cube Keys.",
       575,
-      "Daily"
+      "Daily",
+      null,
+      {
+        "limit": "5/day · Server-wide",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "supply",
@@ -167,10 +172,14 @@ const DATA = {
     [
       "festival",
       "Shugo Festival / Invasion keys",
-      "Early on, use keys on the max-level main. Three keys regenerate daily per server and can accumulate for about a week: do not let the stock cap. Good Odyle and Refining Stone rewards. Choose Daevanion Crystals first, then Stigma Shards.",
+      "Early on, use keys on the max-level main. Keys accumulate: keep room for regeneration. Good Odyle and Refining Stone rewards. Choose Daevanion Crystals first, then Stigma Shards.",
       1801,
       "Daily",
-      "You don’t need to use all entries in one day—just avoid reaching the stock cap."
+      "You don’t need to use all entries in one day—just avoid reaching the stock cap.",
+      {
+        "limit": "Lv13 · +2 keys/day · Cap14 · Server-wide",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "events",
@@ -184,21 +193,40 @@ const DATA = {
       "Watch for Spacetime Rift quests",
       "Available from level 45, with rifts opening every three hours in the reviewed notes. Prioritize the quests; enemy-side sealed dungeons/strongholds are lower priority for their Kina, AP and Enhancement Stones. If the window stays open for ten minutes as in TW/KR, you may fit quests on several characters.",
       870,
-      "Scheduled"
+      "Scheduled",
+      null,
+      {
+        "limit": "Scheduled · See the live Rift timer",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "PvP, Rift quests and sealed dungeons offer Abyss Points.",
+        "supplement": "https://talentbuilds.com/aion2/checklist"
+      }
     ],
     [
       "progression",
       "Advance your current route milestone",
       "Spend main Odyle on guaranteed upgrades or the highest useful tier. Reach the next item-level threshold before optimizing temporary gear, Soul Binds or early Arcana.",
       1065,
-      "Routine"
+      "Routine",
+      null,
+      {
+        "limit": "Odyle: Lv22 · +120/day · Cap840 · Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "alts",
       "Farm 1★/2★ dungeons and transfer resources",
       "Alts supply Kina and crafting materials. Gear them mainly with dungeon drops; consider cheap crafted accessories later.",
       1100,
-      "Routine"
+      "Routine",
+      null,
+      {
+        "limit": "Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "Conquest rewards equipment; Transcendence rewards Arcana, Theostones and Amplify Stone fragments.",
+        "supplement": "https://talentbuilds.com/aion2/checklist"
+      }
     ],
     [
       "craft",
@@ -221,21 +249,36 @@ const DATA = {
       "Buy weekly command-merchant contracts",
       "Available at level 45. Buy before reset; they carry into the following week.",
       2877,
-      "Before reset"
+      "Before reset",
+      null,
+      {
+        "limit": "12 PvE + 20 PvP scrolls/week · Server-wide",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "morph",
       "Claim weekly energy through Substance Morphing",
       "Energy is the creator’s highest early progression priority.",
       2890,
-      "Before reset"
+      "Before reset",
+      null,
+      {
+        "limit": "20 main + 4 per alt/week",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "sub",
       "Buy subscription-shop weekly energy",
-      "Only if you have access to that shop.",
+      "Only if you have access to that shop. Also check 21 extra Daily Dungeon tickets and Soul Crystals.",
       2895,
-      "If subscribed"
+      "If subscribed",
+      null,
+      {
+        "limit": "20 main + 4 per alt/week · Subscription only",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "supply",
@@ -247,28 +290,47 @@ const DATA = {
     [
       "daily-dungeon",
       "Run Daily Dungeon late in the week",
-      "The reviewed guide groups this with weekly performance-based content despite its name. Wait for gear improvements for better rewards; alts benefit from waiting too.",
+      "The reviewed guide groups this with weekly performance-based content despite its name. Wait for gear improvements for better rewards. Extra alts do not provide more entries.",
       1710,
-      "Late week"
+      "Late week",
+      null,
+      {
+        "limit": "14 entries/week · Server-wide",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+      }
     ],
     [
       "nightmare",
-      "Use Nightmare attempts late in the week",
+      "Use Nightmare tickets before reaching the cap",
       "Unlock at 45 early so tickets regenerate at two per day, then run later in the week for better performance rewards. Watch the ticket cap. Reserve 14,000 Nightmare Tokens for the “Unique: Zikel’s Apparition” statue before other shop purchases.",
       1710,
-      "Late week"
+      "Accumulating",
+      "Accumulating, not a weekly reset. Gear up first; avoid the cap.",
+      {
+        "limit": "Lv45 · +2 tickets/day · Cap14 · Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "Nightmare also offers Amplify Stones, Soul Codex rewards, wings and statues.",
+        "supplement": "https://talentbuilds.com/aion2/checklist"
+      }
     ],
     [
       "trials",
       "Complete Ascension Trials on main and alts",
       "Run on the main and alts after weekly gear improvements to push higher for better rewards. Multiple characters also supply plenty of pets.",
       1735,
-      "Late week"
+      "Late week",
+      null,
+      {
+        "limit": "3 runs/week · Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "Solo trial rewards include Selentium, Daevanion Crystal fragments and Manastones/Soulstones.",
+        "supplement": "https://talentbuilds.com/aion2/checklist"
+      }
     ],
     [
       "medals",
       "Complete available medal / bonus-AP events",
-      "Participate in scheduled sieges, Abyss world bosses and battlefields for long-term rewards.",
+      "Participate in scheduled sieges, Abyss world bosses and battlefields for long-term rewards. Battlefield: 3 wins per character/week. Corridors: main and alts before the next siege.",
       2230,
       "Scheduled"
     ]
