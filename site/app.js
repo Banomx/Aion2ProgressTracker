@@ -44,10 +44,14 @@ function normalizeTimers(value){
   return result;
 }
 function parseTimerTimes(text){
-  if(!text.trim())return [];
-  const parts=text.split(',').map(part=>part.trim());
-  if(parts.length>48||parts.some(part=>!/^([01]\d|2[0-3]):[0-5]\d$/.test(part)))throw Error('Use comma-separated UTC times in HH:MM format, for example 08:00, 11:00, 14:00.');
-  return [...new Set(parts.map(part=>Number(part.slice(0,2))*60+Number(part.slice(3))))].sort((a,b)=>a-b);
+  const parts=text.split(/[,;\n]/).map(part=>part.trim()).filter(Boolean);
+  if(parts.length>48)throw Error('Use at most 48 times.');
+  const times=parts.map(part=>{
+    const match=part.match(/^(\d{1,2})(?:\s*:\s*(\d{1,2}))?$/);
+    if(!match||Number(match[1])>23||Number(match[2]||0)>59)throw Error('“'+part+'” is not a valid time. Use hours 0–23 and minutes 0–59, for example 1:00,2:30.');
+    return Number(match[1])*60+Number(match[2]||0);
+  });
+  return [...new Set(times)].sort((a,b)=>a-b);
 }
 function timerTime(minutes){return String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0')}
 function nextTimerTimes(times,now=new Date()){
@@ -62,7 +66,8 @@ function renderTimers(){
   const container=el('spawn-timers');
   if(!container.children.length)container.innerHTML=TIMER_EVENTS.map(([id,name,icon])=>'<details class="spawn-timer timer-'+id+'"><summary><span class="timer-icon" aria-hidden="true">'+icon+'</span> '+name+' <span id="timer-count-'+id+'">Set time</span><span class="timer-chevron" aria-hidden="true">⌄</span></summary><div class="timer-popup"><h3>'+name+'</h3><p class="timer-schedule" id="timer-schedule-'+id+'"></p><ul id="timer-next-'+id+'"></ul><button class="smallbtn" data-timer-edit="'+id+'">Edit schedule</button></div></details>').join('');
   el('configure-timers').disabled=!ready;
-  container.querySelectorAll('[data-timer-edit]').forEach(button=>button.disabled=!ready);
+  document.querySelectorAll('[data-timer-edit]').forEach(button=>button.disabled=!ready);
+  if(!el('timer-panels')){const panels=document.createElement('div');panels.id='timer-panels';panels.hidden=true;document.querySelector('header').append(panels);for(const [id] of TIMER_EVENTS){const popup=document.querySelector('.timer-'+id+' .timer-popup');popup.id='timer-panel-'+id;popup.hidden=true;panels.append(popup);const summary=document.querySelector('.timer-'+id+' summary');summary.setAttribute('aria-controls',popup.id)}}
   updateTimers();
 }
 function updateTimers(now=new Date()){
@@ -82,17 +87,43 @@ function activeTimerWindow(schedule,now){
   for(const day of [-1,0])for(const minute of schedule.times){const start=midnight+day*86400000+minute*60000,end=start+schedule.durationMinutes*60000;if(start<=now.getTime()&&now.getTime()<end)return{start,end}}return null;
 }
 function nextWeeklyReset(now){const schedule=QUESTLOG_SCHEDULE.events.weekly,midnight=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());for(let day=0;day<8;day++){const date=new Date(midnight+day*86400000);if(!schedule.days.includes(date.getUTCDay()))continue;for(const minute of schedule.times){const at=date.getTime()+minute*60000;if(at>now.getTime())return new Date(at)}}}
+function timerFieldFeedback(id,normalize=false){
+  const input=el('schedule-'+id),hint=el('schedule-hint-'+id);
+  try{
+    const custom=parseTimerTimes(input.value),times=custom.length?custom:QUESTLOG_SCHEDULE.events[id].times;
+    if(normalize&&custom.length)input.value=custom.map(timerTime).join(', ');
+    input.removeAttribute('aria-invalid');hint.classList.remove('field-error');
+    const today=new Date();
+    const local=times.slice(0,3).map(minute=>new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate(),0,minute)));
+    hint.textContent=(custom.length?'Custom: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
+    return true;
+  }catch(error){input.setAttribute('aria-invalid','true');hint.classList.add('field-error');hint.textContent=error.message;return false}
+}
 function openTimers(id){
-  el('timer-fields').innerHTML=TIMER_EVENTS.map(([key,name])=>'<label class="setting">'+name+' · UTC times<input id="schedule-'+key+'" name="'+key+'" placeholder="08:00, 11:00, 14:00" value="'+(state.timers[key]||[]).map(timerTime).join(', ')+'"></label>').join('');
+  el('timer-fields').innerHTML=TIMER_EVENTS.map(([key,name])=>'<div class="timer-field"><div class="timer-field-heading"><label for="schedule-'+key+'">'+name+'</label><button class="smallbtn" type="button" data-timer-default="'+key+'">Use default</button></div><input id="schedule-'+key+'" name="'+key+'" autocomplete="off" spellcheck="false" aria-describedby="schedule-hint-'+key+'" placeholder="Default schedule" value="'+(state.timers[key]||[]).map(timerTime).join(', ')+'"><p class="field-hint" id="schedule-hint-'+key+'"></p></div>').join('');
+  TIMER_EVENTS.forEach(([key])=>timerFieldFeedback(key));
   el('timer-error').textContent='';el('timers-dialog').showModal();if(id)el('schedule-'+id).focus();
 }
 el('configure-timers').onclick=()=>openTimers();
-el('spawn-timers').addEventListener('click',event=>{const button=event.target.closest('[data-timer-edit]');if(button)openTimers(button.dataset.timerEdit)});
+document.querySelector('header').addEventListener('click',event=>{const button=event.target.closest('[data-timer-edit]');if(button)openTimers(button.dataset.timerEdit)});
+el('timer-fields').addEventListener('input',event=>{const id=event.target.name;if(TIMER_EVENTS.some(([key])=>key===id)){el('timer-error').textContent='';timerFieldFeedback(id)}});
+el('timer-fields').addEventListener('focusout',event=>{const id=event.target.name;if(TIMER_EVENTS.some(([key])=>key===id))timerFieldFeedback(id,true)});
+el('timer-fields').addEventListener('click',event=>{const button=event.target.closest('[data-timer-default]');if(button){const id=button.dataset.timerDefault;el('schedule-'+id).value='';timerFieldFeedback(id);el('timer-error').textContent=''}});
+el('timers-use-defaults').onclick=()=>{for(const [id] of TIMER_EVENTS){el('schedule-'+id).value='';timerFieldFeedback(id)}el('timer-error').textContent=''};
 el('cancel-timers').onclick=()=>el('timers-dialog').close();
 el('timers-form').addEventListener('submit',event=>{
   event.preventDefault();if(!ready)return;
-  try{const schedules={};for(const [id] of TIMER_EVENTS){const times=parseTimerTimes(el('schedule-'+id).value);if(times.length)schedules[id]=times;}state.timers=schedules;el('timers-dialog').close();change()}catch(error){el('timer-error').textContent=error.message}
+  const schedules={};let invalid;
+  for(const [id,name] of TIMER_EVENTS){if(!timerFieldFeedback(id,true)){if(!invalid)invalid={id,name};continue}const times=parseTimerTimes(el('schedule-'+id).value);if(times.length)schedules[id]=times;}
+  if(invalid){el('timer-error').textContent='Check the '+invalid.name+' time highlighted above.';el('schedule-'+invalid.id).focus();return;}
+  state.timers=schedules;el('timers-dialog').close();change();
 });
+// Expanded timers share a grid below the bar, so several can stay open together.
+function syncTimerPanels(){let open=false;for(const [id] of TIMER_EVENTS){const shown=document.querySelector('.timer-'+id).open;el('timer-panel-'+id).hidden=!shown;open=open||shown}el('timer-panels').hidden=!open}
+document.addEventListener('toggle',event=>{if(event.target.matches?.('.spawn-timer'))syncTimerPanels()},true);
+function closeTimerPanels(){document.querySelectorAll('.spawn-timer[open]').forEach(timer=>timer.open=false);syncTimerPanels()}
+document.addEventListener('click',event=>{if(!event.target.closest('.spawn-timer, #timer-panels'))closeTimerPanels()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeTimerPanels()});
 setInterval(()=>{if(ready)updateTimers()},1000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ready)updateTimers()});
 

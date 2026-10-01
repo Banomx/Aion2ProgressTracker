@@ -33,4 +33,4 @@ The workflow also runs hourly at minute 17 UTC. Scheduled runs may be delayed by
 
 See [docs/architecture.md](docs/architecture.md) for source files, storage, build and deployment details.
 
-The header uses QuestLog’s Global schedule, checked on every hourly deployment. **Set timers** accepts custom UTC times separated by commas; blank fields use QuestLog defaults. Timer schedules do not enable or change checklist resets.
+The header uses QuestLog’s Global schedule, checked on every hourly deployment. **Set timers** accepts custom UTC times such as `1:00,2:30` or `1,2,3` (zeros/spaces optional); blank fields use QuestLog defaults. Timer schedules do not enable or change checklist resets.
