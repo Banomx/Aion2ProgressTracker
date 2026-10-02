@@ -55,39 +55,38 @@ const DATA = {
       "Supporting: reviewed video / text guide"
     ],
     [
-      "Train accessory and weapon crafting",
-      "Professional 20 → roughly 25–30",
-      "Queue inexpensive crafts whenever you sleep or go AFK. Train your weapon profession and prepare Handicrafting for later dragon accessory upgrades; use green quests for early accessory upgrades.",
-      906,
+      "Get accessory upgrades from green quests",
+      "Early accessories · work toward 1,400 iLvL",
+      "Complete green quests and equip their accessory upgrades for the early gear breakpoint. Save accessory crafting for the later dragon-upgrade phases.",
+      564,
       10,
       [
-        "Train with cheap level-1 crafts toward Professional 20. Push toward roughly 25–30 with Balaur materials.",
-        "Weapon profession: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster.",
-        "Keep accessory crafting for the later dragon upgrades once your profession and materials are ready."
+        "Use quest rewards to replace weak accessories while finishing world exploration.",
+        "Check your actual iLvL after equipping upgrades. The original chart’s +118 accessory gain assumed crafting and is not a fixed gain from quests.",
+        "Next, craft the weapon and claim Draupnir armor to reach the 1,400 Vakron target. White/Dark Dragon accessory crafting belongs in the 1,600–1,900 phase."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
       [
-        "crafting"
+        "green-quests"
       ],
-      "Supporting: reviewed video / text guide"
+      "Primary: early green-quest correction to the Sep-29 gear chart"
     ],
     [
-      "Upgrade accessories from green quests, then craft weapon",
-      "Green-quest accessories → weapon · Draupnir from 700 iLvL",
-      "Complete green quests for accessory upgrades around the 1,400 iLvL breakpoint. Use alt Kina and crafting materials to craft the main’s Star Dragon weapon.",
+      "Craft the weapon and claim Draupnir armor",
+      "Crafted weapon + Draupnir armor · target 1,400 iLvL",
+      "After upgrading accessories through green quests, craft the main’s weapon with alt materials/Kina and use Exploration Draupnir’s guaranteed armor to bridge to Vakron.",
       1100,
       3,
       [
-        "Complete green quests and equip accessory upgrades before spending on early crafted accessories. Keep later White/Dark Dragon and Wise/Ebony Dragon accessory upgrades for their respective phases.",
-        "Craft your weapon with alt materials/Kina. The chart estimates +17 from the weapon and +16 from Draupnir’s guaranteed Legend armor.",
-        "Draupnir is the chart’s 700-iLvL Exploration step. Work toward the three reward cubes for guaranteed armor; the existing reward guidance clarifies that x3 is reward progress, not necessarily three runs.",
-        "The original chart’s 1,420 total included +118 from crafted accessories. With green-quest accessories, your actual total varies; reach the 1,400 Vakron entry target.",
-        "Supporting alt plan: useful 1★/2★ farming across Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island. Keep failed-quality crafts for sales or supply requests."
+        "The chart estimates +17 iLvL from the crafted weapon and +16 from Draupnir’s guaranteed Legend armor. Reach 1,400 with your actual equipped gear.",
+        "Weapon profession from the supporting guide: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster. If training it yourself, queue inexpensive recipes while AFK.",
+        "Draupnir is the chart’s 700-iLvL Exploration step. Work toward three reward cubes for guaranteed armor; x3 is reward progress, not necessarily three runs.",
+        "Use eligible alt drops to replace weak armor. Continue useful 1★/2★ alt farming for Kina and crafting materials.",
+        "Early accessory crafting is replaced by the previous green-quest step. Start the later White/Dark Dragon accessory upgrades in the 1,600–1,900 phase."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
       [
-        "green-quests",
-        "crafting",
+        "weapon-crafting",
         "draupnir",
         "alt-farm"
       ],
@@ -179,8 +178,7 @@ const DATA = {
       ],
       "3★ armor · Ferocious Horn Den",
       [
-        "horn-conquest",
-        "crafting"
+        "horn-conquest"
       ],
       "Primary: Sep-29 gear chart + early green-quest correction"
     ],
@@ -625,6 +623,14 @@ const DATA = {
       "rewards": "Necklace, two earrings, two rings and weapon; later dragon upgrades",
       "plan": "Use green quests for early accessory upgrades around 1,400. Craft the weapon (chart estimate +17), then craft later White/Dark Dragon (+144) and Wise/Ebony Dragon (+98) upgrades when ready.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "weapon-crafting",
+      "activity": "Crafted weapon · early gear bridge",
+      "where": "Craft the weapon using your class’s weapon profession, with materials/Kina from alts. Supporting guide: Ranger/Chanter → Handicrafting; Gladiator/Templar/Assassin/Cleric → Weaponsmithing; Sorcerer/Spiritmaster → Alchemy.",
+      "rewards": "Crafted weapon upgrade; chart estimate +17 iLvL",
+      "plan": "Use green-quest accessories for the early breakpoint. Combine the weapon with Draupnir armor to reach 1,400; save White/Dark and Wise/Ebony Dragon accessory crafting for the later gear phases.",
+      "source": "Primary: Sep-29 gear chart; weapon professions: reviewed video/text guide"
     },
     {
       "id": "draupnir",

@@ -62,7 +62,7 @@ assert.deepEqual([...gd.querySelectorAll('.step input')].map(node=>node.dataset.
 assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 assert.match(gd.getElementById('route-step-11').textContent,/1,600 Stage 1/);
 assert.match(gd.getElementById('route-step-11').textContent,/Where: Transcendence Stage 1/);
-assert.match(gd.getElementById('route-step-3').textContent,/Upgrade accessories from green quests/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
+assert.match(gd.getElementById('route-step-10').textContent,/Get accessory upgrades from green quests/);assert.match(gd.getElementById('route-step-3').textContent,/Craft the weapon and claim Draupnir armor/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
 const gearBefore=gw.localStorage.getItem(storageKey);
 gd.querySelector('[data-view="rewards"]').click();
 assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');
