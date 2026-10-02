@@ -57,7 +57,7 @@ const DATA = {
     [
       "Get accessory upgrades from green quests",
       "Early accessories · work toward 1,400 iLvL",
-      "Complete green quests and equip their accessory upgrades for the early gear breakpoint. These are your starting accessories; Splendent Star Dragon Lord is the later crafting target.",
+      "Complete green quests and equip their accessory upgrades for the early gear breakpoint. Avoid Dapnir gear from 1★ Conquest dungeons while working toward 1,400 iLvL. Splendent Star Dragon Lord remains your crafting target.",
       564,
       10,
       [
@@ -78,9 +78,10 @@ const DATA = {
       1100,
       3,
       [
+        "Avoid Dapnir gear from 1★ Conquest dungeons on the route to 1,400 iLvL. The Draupnir reward listed here is specifically Exploration’s guaranteed armor reward; do not confuse it with Conquest gear.",
         "Best-in-slot crafting target: Splendent Star Dragon Lord. Start with the weapon if it is a useful upgrade; there is no separate lower crafted set to make first. Green quests still supply the early accessories.",
         "Exploration Draupnir opens at the chart’s 700-iLvL gate. Work toward three reward cubes for guaranteed Legend armor; x3 is reward progress, not necessarily three runs. The chart estimates +16 from this armor upgrade.",
-        "Use transferable alt drops to replace weak armor, and keep useful 1★/2★ alt farming supplying Kina and crafting materials.",
+        "Use eligible, useful alt drops to replace weak armor, without investing in Dapnir 1★ Conquest gear. Keep useful 1★/2★ alt farming supplying Kina and crafting materials.",
         "Already at 1,400? Move directly to step 6. You can craft the weapon alongside Vakron upgrades instead; neither crafting nor Draupnir is a mandatory extra step once you qualify."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
@@ -638,7 +639,7 @@ const DATA = {
       "activity": "Exploration · Draupnir",
       "where": "Expedition → Exploration → Draupnir · chart gate 700 iLvL",
       "rewards": "Guaranteed Legend armor via reward-cube progress",
-      "plan": "At 700 iLvL, claim three reward cubes toward guaranteed Legend armor if it upgrades a weak slot (chart estimate +16). Eligible alt armor drops can also help. At 1,400, prioritize Vakron; x3 is reward progress, not necessarily three runs.",
+      "plan": "Exploration reward plan: at 700 iLvL, claim three reward cubes toward guaranteed Legend armor if it upgrades a weak slot (chart estimate +16). Avoid Dapnir gear from 1★ Conquest while working toward 1,400; this Exploration reward is a different mode. At 1,400, prioritize Vakron. x3 is reward progress, not necessarily three runs.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
     },
     {
@@ -866,7 +867,7 @@ const DATA = {
           [
             "Green quests → accessory upgrades",
             null,
-            "Use green-quest rewards for the early breakpoint. Gain varies; the original chart used +118 from crafted accessories."
+            "Use green-quest rewards for early accessories and avoid Dapnir gear from 1★ Conquest on the way to 1,400. Gain varies; the original chart used +118 from crafted accessories."
           ],
           [
             "Splendent Star Dragon Lord weapon",
@@ -876,7 +877,7 @@ const DATA = {
           [
             "Exploration · Draupnir",
             16,
-            "Guaranteed Legend armor from three reward cubes; use alt drops where eligible. Skip this lower-tier farm if already at 1,400."
+            "Exploration only: guaranteed Legend armor from three reward cubes. Avoid Dapnir gear from 1★ Conquest; proceed to Vakron once at 1,400."
           ]
         ],
         "chartTotal": 1420
@@ -962,6 +963,7 @@ const DATA = {
     ],
     "notes": [
       "Green quests replace early accessory crafting. Splendent Star Dragon Lord is the reviewed crafting target for every weapon/accessory piece throughout the route; complete and improve the same set as resources allow.",
+      "For the 1,400 breakpoint, avoid Dapnir gear from 1★ Conquest dungeons. The optional Draupnir armor bridge in this route refers to Exploration’s guaranteed reward, not Conquest gear.",
       "The chart totals remain original reference figures. Its old +17, +144 and +98 crafting rows do not establish fixed gains for the corrected crafting target and must not be counted as repeated gains from crafting the same slots.",
       "The reviewed guide puts weapon crafting after Vakron and uses Draupnir as a fallback. The chart lists both earlier. Prepare useful upgrades in step 5, but at 1,400 proceed to Vakron; remaining weapon work can continue in step 6.",
       "Draupnir/Vakron x3 means reward-cube progress, not necessarily three runs. Vakron’s reviewed guarantee uses exactly three cubes across two runs and 120 Odyle.",
