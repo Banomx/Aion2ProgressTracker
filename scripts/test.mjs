@@ -62,6 +62,7 @@ assert.deepEqual([...gd.querySelectorAll('.step input')].map(node=>node.dataset.
 assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 assert.match(gd.getElementById('route-step-11').textContent,/1,600 Stage 1/);
 assert.match(gd.getElementById('route-step-11').textContent,/Where: Transcendence Stage 1/);
+assert.match(gd.getElementById('route-step-3').textContent,/Upgrade accessories from green quests/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
 const gearBefore=gw.localStorage.getItem(storageKey);
 gd.querySelector('[data-view="rewards"]').click();
 assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');
@@ -79,7 +80,7 @@ assert.equal(gw.localStorage.getItem(storageKey),gearBefore);
 gd.querySelector('[data-view="route"]').click();assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 const guideData=JSON.parse(sourceScripts[0].replace(/^const DATA = /,'').trim().replace(/;$/,''));
 let estimatedTotal=0;const knownRewards=new Set(guideData.rewardSources.map(item=>item.id));
-for(const stage of guideData.gearGuide.stages){estimatedTotal+=stage.rows.reduce((sum,row)=>sum+row[1],0);assert.equal(estimatedTotal,stage.total)}
+for(const stage of guideData.gearGuide.stages){if(stage.rows.some(row=>row[1]===null)){assert.equal(stage.totalLabel,'original chart total');estimatedTotal=stage.total;continue}estimatedTotal+=stage.rows.reduce((sum,row)=>sum+row[1],0);assert.equal(estimatedTotal,stage.total)}
 assert.equal(estimatedTotal,2700);assert.equal(knownRewards.size,guideData.rewardSources.length);
 for(const milestone of guideData.route)for(const id of milestone[7])assert.ok(knownRewards.has(id),'Unknown route reward '+id);
 for(const group of ['daily','weekly'])for(const task of guideData[group])if(task[6]?.rewardTarget)assert.ok(knownRewards.has(task[6].rewardTarget));

@@ -10,32 +10,33 @@ const DATA = {
         "The reviewed Day-1 plan stops the main at level 35 first for Glory world-boss farming, then brings alts to 22 before finishing the main to 45.",
         "Keep alt energy working in 1★ and 2★ content once unlocked."
       ],
-      "Launch foundations",
+      "Foundation · level 45 and exploration",
       [
         "odyle"
-      ]
+      ],
+      "Supporting: reviewed video / text guide"
     ],
     [
       "Reach 45 and complete exploration",
-      "Level 45 · exploration baseline",
-      "Main to 45 first, then alts. Unlock Duties and Nightmare early. Complete sealed dungeons, strongholds and green quests on each character.",
+      "Level 45 · foundation example: 1,269 iLvL",
+      "Build the chart’s foundation before chasing dungeon tiers: leveling gear, sealed-dungeon Daevanion points, feather amulet, stronghold belt, Abyss feathers and two Clash Runes.",
       564,
       1,
       [
-        "Do the five daily Duty quests; prioritize Pet Souls and Cube Keys.",
-        "Collect feathers on the main: fill missing Altgard feathers (about 186 there, about 560 total for the Monolith), then missing Abyss feathers.",
-        "If Abyss is crowded, level alts and return during a quieter window or at night. Synchronize the Monolith to alts.",
-        "The Sep-29 gear chart estimates a 1,269 iLvL foundation: level-45 gear 645, sealed-dungeon Daevanion points 360, feather amulet 65, stronghold belt 65, Abyss-feather board points 52 and two Clash Runes 82.",
-        "Bring the amulet and belt to the chart’s Legend +0 target (the reviewed video calls this Unique +0). Keep both Clash Runes at +1; further enhancement can destroy them."
+        "Level-45 gear: 645; sealed-dungeon Daevanion points: 360; feather amulet: 65; stronghold belt: 65; Abyss-feather board points: 52; two Clash Runes: 82. The chart totals 1,269 as an example, not a guaranteed value.",
+        "Amulet and belt: Legend +0. Two Clash Runes: +1 each; further enhancement can destroy them.",
+        "Complete green quests for early accessory upgrades. Supporting launch advice: unlock Duties and Nightmare at 45, and prioritize Pet Souls/Cube Keys from the five daily Duties.",
+        "The older collection notes add about 186 Altgard feathers / 560 total for the Monolith, then missing Abyss feathers. Synchronize the Monolith to alts; return to crowded Abyss areas later."
       ],
-      "Launch foundations",
+      "Foundation · level 45 and exploration",
       [
         "sealed",
         "feathers",
         "strongholds",
         "abyss-feathers",
         "runes"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
       "Unlock Nightmare and reserve statue currency",
@@ -47,136 +48,145 @@ const DATA = {
         "Reserve 14,000 Nightmare Tokens for the “Unique: Zikel’s Apparition” statue before other purchases; it is a substantial stat upgrade.",
         "Run performance-based attempts later in the week as gear improves, while watching the ticket cap so regeneration is not wasted."
       ],
-      "Launch foundations",
+      "Foundation · level 45 and exploration",
       [
         "nightmare"
-      ]
+      ],
+      "Supporting: reviewed video / text guide"
     ],
     [
       "Train accessory and weapon crafting",
       "Professional 20 → roughly 25–30",
-      "Queue inexpensive crafts whenever you sleep or go AFK. Handicrafting is the main priority for Star Dragon accessories; train the profession needed for your weapon next.",
+      "Queue inexpensive crafts whenever you sleep or go AFK. Train your weapon profession and prepare Handicrafting for later dragon accessory upgrades; use green quests for early accessory upgrades.",
       906,
       10,
       [
         "Train with cheap level-1 crafts toward Professional 20. Push toward roughly 25–30 with Balaur materials.",
         "Weapon profession: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster.",
-        "Start accessory crafting once your profession and materials are ready."
+        "Keep accessory crafting for the later dragon upgrades once your profession and materials are ready."
       ],
-      "Guaranteed gear & 1,900 IL",
+      "700 → 1,400 · accessories, weapon and Draupnir",
       [
         "crafting"
-      ]
+      ],
+      "Supporting: reviewed video / text guide"
     ],
     [
-      "Craft Star Dragon accessories, then weapon",
-      "Five accessories → weapon · Draupnir from 700 iLvL",
-      "Use alt Kina and crafting materials to fund the main. Craft a necklace, two earrings and two rings, then craft your Star Dragon weapon.",
+      "Upgrade accessories from green quests, then craft weapon",
+      "Green-quest accessories → weapon · Draupnir from 700 iLvL",
+      "Complete green quests for accessory upgrades around the 1,400 iLvL breakpoint. Use alt Kina and crafting materials to craft the main’s Star Dragon weapon.",
       1100,
       3,
       [
-        "Run 1★ and 2★ dungeons on alts. The reviewed four-alt example spreads runs across Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island.",
-        "Buy Artisan base items if affordable; otherwise craft the bases yourself. Market prices are not guaranteed.",
-        "Keep failed-quality crafts: sell them or use them for supply requests. Equip alts mainly with dungeon drops.",
-        "If you need the bridge to 1,400, use Exploration Draupnir’s guaranteed armor. The chart’s “x3” means reward progress; follow the reviewed three-cube rule rather than assuming three runs.",
-        "The chart estimates +118 iLvL from five crafted accessories, +17 from the weapon and +16 from Draupnir armor: roughly 1,420 after the exploration baseline."
+        "Complete green quests and equip accessory upgrades before spending on early crafted accessories. Keep later White/Dark Dragon and Wise/Ebony Dragon accessory upgrades for their respective phases.",
+        "Craft your weapon with alt materials/Kina. The chart estimates +17 from the weapon and +16 from Draupnir’s guaranteed Legend armor.",
+        "Draupnir is the chart’s 700-iLvL Exploration step. Work toward the three reward cubes for guaranteed armor; the existing reward guidance clarifies that x3 is reward progress, not necessarily three runs.",
+        "The original chart’s 1,420 total included +118 from crafted accessories. With green-quest accessories, your actual total varies; reach the 1,400 Vakron entry target.",
+        "Supporting alt plan: useful 1★/2★ farming across Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island. Keep failed-quality crafts for sales or supply requests."
       ],
-      "Guaranteed gear & 1,900 IL",
+      "700 → 1,400 · accessories, weapon and Draupnir",
       [
+        "green-quests",
         "crafting",
         "draupnir",
         "alt-farm"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
       "Claim the guaranteed Vakron armor",
-      "1,400 IL · 2 runs · 120 Odyle",
-      "Run Exploration Vakron Sky Island on the main. Open exactly three reward cubes across two runs, not four, and choose the guaranteed chest armor.",
+      "1,400 iLvL · Vakron armor → 1,600 target",
+      "Get the guaranteed Vakron chest armor, then enhance lasting gear to reach the chart’s next step: Transcendence Stage 1 at 1,600.",
       1170,
       2,
       [
-        "Avoid spending energy on leveling-dungeon boxes.",
-        "This armor piece is worth investing in alongside your bracelets and crafted gear.",
-        "The chart estimates +32 iLvL from Vakron armor. Its “Vakron x3” shorthand is paired here with the reviewed method: three reward cubes across two runs.",
-        "After crafting and Vakron, the chart estimates about 1,611 with enhancements: nine Legend pieces to +11, the other bracelet and guard to +10, remaining pieces around +8. Spend on gear you will keep."
+        "Vakron armor: chart estimate +32 iLvL. Its x3 shorthand is paired with the supporting reward method: exactly three cubes across two runs, 120 Odyle.",
+        "Enhance nine Legend pieces to +11, the other bracelet and guard to +10, and the rest to about +8. The chart estimates +159 from these upgrades.",
+        "The original chart totals roughly 1,611 here. Your green-quest accessory replacements and existing gear change the result; use 1,600 as the next progression target.",
+        "Keep spending on equipment you will use; avoid unnecessary leveling-dungeon reward boxes."
       ],
-      "Guaranteed gear & 1,900 IL",
+      "1,400 → 1,600 · Vakron and enhancements",
       [
         "vakron"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
-      "Close the gap to item level 1,900",
+      "Use Stage-1 Arcana and upgrade toward 1,900",
       "1,600 Stage 1 → 1,900 Stage 2",
-      "Use Stage-1 Arcana, crafted-gear upgrades and intermediate stones to reach the Stage-2 threshold. Do not wait until 1,900 to fill your first Arcana slots.",
+      "At 1,600, farm starter Arcana in Stage 1. Upgrade the weapon and accessories toward Splendent White Dragon or Splendent Dark Dragon, then use intermediate Magicstones as needed for Stage 2.",
       1100,
       11,
       [
-        "At 1,600 iLvL, Transcendence Stage 1 provides starter Arcana. The chart uses two green and three grey cards for an estimated +140 iLvL; replace these later.",
-        "Belt and amulet: Unique +0. Ascensions Bracelet: +11. Liberator Bracelet: +10. Two Clash Runes: +1 each.",
-        "Use Intermediate Manastones and Soulstones on bracelets, Vakron armor, Star Dragon accessories and weapon; aim for at least one blue and one green stat.",
-        "Useful high-end Unique/gold gear such as Vakron can go to +11. Temporary blue story gear: only up to +3 with Lesser Manastones if needed.",
-        "If still short of 1,900, consider the Exploration Draupnir guaranteed reward, further worthwhile enhancements or improved manastone rolls.",
-        "Upgrade the crafted weapon and accessories toward Splendent White Dragon or Splendent Dark Dragon; the chart estimates +144 iLvL.",
-        "The chart calls its socket upgrades “Intermediate Magicstones” and estimates +105 iLvL. Use the site’s Manastone/Soulstone advice on worthwhile gear; exact rolls change the gain."
+        "Stage-1 example: two green and three grey Arcana cards, estimated +140 iLvL. This is the first Arcana phase in the chart’s route.",
+        "Splendent White Dragon or Splendent Dark Dragon weapon/accessories: estimated +144 iLvL.",
+        "Use intermediate Magicstones on gear as needed to reach at least 1,900, and revisit sockets after 2,100. The chart estimates +105 from stones; actual rolls and equipment change the gain.",
+        "The original chart’s example totals 2,000 after these upgrades. Stage 2 opens at the chart’s 1,900 target; there is no need to wait for the example total.",
+        "Supporting economy advice: avoid perfect early rolls and excessive spending on temporary story gear."
       ],
-      "Guaranteed gear & 1,900 IL",
+      "1,600 → 1,900 · starter Arcana and dragon upgrades",
       [
         "stage1",
         "stones",
         "crafting"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
-      "Fill Arcana slots and push to 2,100",
+      "Upgrade Arcana in Stage 2 and push to 2,100",
       "1,900 IL · Transcendence Stage 2",
-      "Farm your initial Arcana in Stage 2. Fill slots and raise item level; save perfect set effects and skill hunting for later.",
+      "Replace the Stage-1 starter cards with stronger Stage-2 Arcana. The chart’s example uses two blue and one green card before moving into 3★ armor farming.",
       1337,
       4,
       [
-        "The Sep-29 chart uses two blue and one green Arcana card for an estimated +100 iLvL, reaching roughly 2,100 from its 2,000 example. Additional energy can target five blue cards.",
-        "Fill slots first; perfect set effects and skill rolls come later. The guide’s totals are examples, not guaranteed gains."
+        "Two blue and one green Arcana: chart estimate +100 iLvL, bringing its 2,000 example to 2,100.",
+        "You can spend more energy toward five blue cards if you want. Fill useful slots before chasing perfect set effects or class skills.",
+        "The chart says 3★ dungeons unlock over 2,100, but labels its next Conquest section 2,000. Keep this conflict visible and check the actual entry requirement."
       ],
-      "2,100 IL & Nuakum armor",
+      "1,900 → 2,100 · Stage-2 Arcana",
       [
         "stage2"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
       "Bank the Exploration guaranteed reward",
-      "2,100 IL · Ferocious Horn Den",
-      "Run Exploration Ferocious Horn Den twice, opening three reward cubes for 120 Odyle in total. Leave the guaranteed reward selector unclaimed until after your Conquest drops.",
+      "Supporting option · Ferocious Horn Den Exploration",
+      "If using the existing guaranteed-reward plan alongside the chart’s Conquest route, bank the Exploration selector so it can fill a missing armor slot after drops.",
       1463,
       5,
       [
-        "Bank the selector so it can fill a missing armor slot later."
+        "Supporting reviewed route: Exploration Ferocious Horn Den at 2,100, two runs and three cubes for 120 Odyle. Leave the selector unclaimed until after Conquest farming."
       ],
-      "2,100 IL & Nuakum armor",
+      "3★ armor · Ferocious Horn Den",
       [
         "horn-exploration"
-      ]
+      ],
+      "Supporting: reviewed video / text guide"
     ],
     [
-      "Farm Nuakum armor and upgrade to Ebony",
-      "28 Conquest runs · two pity tickets",
-      "Run Conquest Ferocious Horn Den and claim both reward boxes each run. Fourteen runs give one pity ticket; 28 runs give two tickets for the Nuakum Guard.",
+      "Farm Conquest armor and enhance it",
+      "3★ Conquest · chart label 2,000 / unlock note 2,100",
+      "Farm Ferocious Horn Den for armor upgrades, add intermediate stones as pieces change, and bring Legend equipment to about +11. Follow with Stage-4 Arcana and the final crafted dragon upgrades.",
       1500,
       6,
       [
-        "Aim for the Nuakum armor set while your alts continue 1★/2★ farming.",
-        "Stack Kina and crafting materials. Use Transfer Crafting to upgrade the weapon to Ebony first, then upgrade accessories.",
-        "The chart estimates +332 iLvL from Tier-3 Conquest armor upgrades and +10 from enhancements. Bring Legend gear toward +11; weapon/accessories can optionally go to +15 for damage.",
-        "Reapply useful stones as armor is replaced. The chart’s final section is labeled 2,000, but its unlock note and the reviewed route use 2,100 for 3★ content; check the actual in-game gate."
+        "The chart estimates +332 iLvL from Tier-3 Conquest armor and +10 from enhancements.",
+        "Get all Legend gear to about +11. Weapon/accessories can optionally go to +15 for more damage; that is not a mandatory entry requirement.",
+        "The chart’s Conquest label is 2,000, while its own 3★ unlock note is 2,100. Check the dungeon gate rather than treating either as independently verified.",
+        "Supporting pity plan: claim both reward boxes; fourteen runs give one pity ticket and 28 give two for Nuakum Guard. Alts continue funding materials and Kina.",
+        "Final Wise/Ebony Dragon crafting belongs in the next endgame phase rather than replacing the earlier White/Dark Dragon step."
       ],
-      "2,100 IL & Nuakum armor",
+      "3★ armor · Ferocious Horn Den",
       [
         "horn-conquest",
         "crafting"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ],
     [
       "Use the banked selector for missing armor",
-      "After your second Conquest pity ticket",
+      "Supporting option · after Conquest drops",
       "Redeem the saved Exploration reward for a piece still missing after Conquest farming.",
       1617,
       7,
@@ -184,28 +194,31 @@ const DATA = {
         "Prioritize boots or gloves when missing: their Movement Speed or Combat Speed Soul Binds are useful early.",
         "Avoid chasing perfect Soul Binds; they increase combat power but do not raise item level."
       ],
-      "2,100 IL & Nuakum armor",
+      "3★ armor · Ferocious Horn Den",
       [
         "horn-exploration"
-      ]
+      ],
+      "Supporting: reviewed video / text guide"
     ],
     [
-      "Build endgame Arcana and aim for 2,700",
+      "Get Legend Arcana and finish the dragon upgrades",
       "Stage 4 · Legend Arcana · 2,700 planning target",
-      "Return to Stage 4 for gold Arcana. Now target the correct set effect and class skills/passives while continuing gear crafting and Kina farming.",
+      "Farm Legend Arcana in Transcendence Stage 4, then upgrade the weapon and accessories to Splendent Wise Dragon or Splendent Ebony Dragon. These finish the chart’s path toward 2,700.",
       1640,
       8,
       [
-        "Craft missing armor pieces and keep progressing through Transfer Crafting toward Ludra and Sanctuary.",
-        "The video does not confirm a Stage-4 entry item level; do not treat an estimated threshold as a requirement.",
-        "The chart estimates +160 iLvL from Legend/gold Arcana and +98 from Splendent Wise Dragon or Splendent Ebony Dragon weapon/accessories. Combine these with Conquest armor and enhancements for its 2,700 example.",
-        "The chart says 2,700 may open the ten-player raid if requirements stay unchanged. Treat that as an unconfirmed planning target, not a verified raid entry requirement."
+        "Legend/gold Arcana: chart estimate +160 iLvL. Now work on useful stats, enhancements, set effects and class skills/passives.",
+        "Splendent Wise Dragon or Splendent Ebony Dragon weapon/accessories: chart estimate +98 iLvL.",
+        "Together with the Conquest armor and enhancement phase, the original example reaches 2,700. Your gear and quest accessory gains change the exact total.",
+        "Stage-4 entry iLvL is not given in the chart. Its ten-player raid claim at 2,700 is conditional on requirements staying unchanged.",
+        "Supporting older advice: keep funding the main through alt materials/Kina and use appropriate Transfer Crafting as you replace gear."
       ],
-      "Endgame & long-term alts",
+      "Toward 2,700 · Legend Arcana and dragon upgrades",
       [
         "stage4",
         "crafting"
-      ]
+      ],
+      "Primary: Sep-29 gear chart + early green-quest correction"
     ]
   ],
   "daily": [
@@ -303,7 +316,7 @@ const DATA = {
     [
       "craft",
       "Queue crafting before sleep or AFK",
-      "Use inexpensive recipes to train Handicrafting first, then your weapon profession. Aim for Professional 20 and roughly 25–30 using Balaur materials.",
+      "Train the weapon profession and prepare Handicrafting for later dragon accessory upgrades. Use green quests for early accessory upgrades; queue inexpensive crafts while AFK.",
       906,
       "Routine",
       null,
@@ -432,7 +445,7 @@ const DATA = {
   "qa": [
     [
       "Energy spending",
-      "Exactly three Exploration boxes, not four. Prefer 3★ over 2★/1★ content on the main; use Transcendence stage 1 if stage 2 is still out of reach.",
+      "Exactly three Exploration boxes, not four. The primary chart uses Stage 1 at 1,600 for starter Arcana, then Stage 2 at 1,900; follow the gear phases before optimizing rolls. Prefer useful 3★ content once its entry gate is met.",
       2423
     ],
     [
@@ -578,7 +591,7 @@ const DATA = {
       "activity": "Strongholds",
       "where": "World exploration: complete strongholds",
       "rewards": "Belt progression",
-      "plan": "Chart: belt to Legend +0, estimated +65 iLvL. Reviewed video uses the name Unique +0.",
+      "plan": "Primary chart target: belt to Legend +0, estimated +65 iLvL.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
     },
     {
@@ -598,11 +611,19 @@ const DATA = {
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026"
     },
     {
+      "id": "green-quests",
+      "activity": "Green quests · early accessory upgrades",
+      "where": "Complete green quests during world exploration around the 1,400 iLvL breakpoint",
+      "rewards": "Accessory upgrades from quest rewards",
+      "plan": "Use these for early accessories instead of crafting the five-piece accessory set. Gains depend on the pieces replaced; the chart’s +118 crafting estimate does not apply to quest rewards. Later crafted dragon upgrades remain in the route.",
+      "source": "Tracker correction; replaces the uploaded chart’s early accessory-crafting step"
+    },
+    {
       "id": "crafting",
       "activity": "Crafted accessories and weapon",
       "where": "Handicrafting for accessories; weapon profession depends on class. Use main crafting with alt materials/Kina. Ranger/Chanter: Handicrafting; Gladiator/Templar/Assassin/Cleric: Weaponsmithing; Sorcerer/Spiritmaster: Alchemy.",
       "rewards": "Necklace, two earrings, two rings and weapon; later dragon upgrades",
-      "plan": "Initial +118 / +17 estimates; White/Dark Dragon tier +144; Wise/Ebony Dragon tier +98. These are separate stages, not rewards from one craft.",
+      "plan": "Use green quests for early accessory upgrades around 1,400. Craft the weapon (chart estimate +17), then craft later White/Dark Dragon (+144) and Wise/Ebony Dragon (+98) upgrades when ready.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
     },
     {
@@ -634,7 +655,7 @@ const DATA = {
       "activity": "Intermediate stones and enhancements",
       "where": "Socket/enhance gear worth keeping. Ascension Trials supply Manastones/Soulstones; a specific Magicstone farm is not given by the chart.",
       "rewards": "Item-level upgrades from stones and enhancements; exact rolls vary",
-      "plan": "Chart stone estimate +105. Keep temporary story-gear investment low. “Magicstones” is the chart’s wording; the existing guide uses Manastones/Soulstones.",
+      "plan": "Primary chart: intermediate Magicstones on gear as needed to reach 1,900, then again after 2,100; estimated +105. Older socket advice supplements this where applicable; exact gains vary.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Existing checklist guides / reviewed video"
     },
     {
@@ -656,7 +677,7 @@ const DATA = {
     {
       "id": "horn-conquest",
       "activity": "Conquest · Ferocious Horn Den",
-      "where": "Expedition → Conquest → Ferocious Horn Den · plan for 2,100 iLvL, verify the in-game gate",
+      "where": "Expedition → Conquest → Ferocious Horn Den · chart label 2,000 / chart unlock note 2,100; verify entry in game",
       "rewards": "Nuakum armor, equipment drops and Conquest pity tickets",
       "plan": "Claim both boxes. Fourteen runs give one pity ticket; 28 give two for Nuakum Guard. Chart estimates +332 from armor. Its 2,000 label conflicts with its 2,100 unlock note.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
@@ -832,14 +853,14 @@ const DATA = {
         ]
       },
       {
-        "title": "Craft and bridge to Vakron",
+        "title": "Green-quest accessories and the bridge to Vakron",
         "gate": "Draupnir: 700 iLvL",
         "total": 1420,
         "rows": [
           [
-            "Craft accessories",
-            118,
-            "One necklace, two earrings, two rings; alt materials"
+            "Green quests → accessory upgrades",
+            null,
+            "Use green-quest rewards for the early breakpoint. Gain varies; the original chart used +118 from crafted accessories."
           ],
           [
             "Craft weapon",
@@ -851,7 +872,8 @@ const DATA = {
             16,
             "Guaranteed Legend armor; chart x3 / reviewed three-cube plan"
           ]
-        ]
+        ],
+        "totalLabel": "original chart total"
       },
       {
         "title": "Vakron and lasting enhancements",
