@@ -63,7 +63,7 @@ const DATA = {
       [
         "Use quest rewards to replace weak accessories while finishing world exploration.",
         "Check your actual iLvL after equipping upgrades. The original chart’s +118 accessory gain assumed crafting and is not a fixed gain from quests.",
-        "After equipping the quest rewards, prepare useful weapon and armor upgrades in step 5. If already at 1,400, go straight to Vakron; do not delay entry just to finish lower-tier upgrades."
+        "After equipping the quest rewards, prepare useful armor upgrades and your accessory-first crafting plan in step 5. If already at 1,400, go straight to Vakron; you do not need to finish crafting before entry."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
       [
@@ -72,21 +72,21 @@ const DATA = {
       "Primary: player gear chart + reviewed green-quest and Splendent Star Dragon Lord corrections"
     ],
     [
-      "Prepare your weapon and claim Draupnir armor",
-      "Splendent Star Dragon Lord weapon · Draupnir armor · target 1,400",
-      "Use alt materials/Kina to prepare a Splendent Star Dragon Lord weapon and claim Draupnir’s guaranteed Legend armor when they improve your gear. Check your equipped iLvL after each upgrade; once at 1,400, continue to Vakron.",
+      "Prepare crafting and claim Draupnir armor",
+      "Splendent Star Dragon Lord · accessories first, then weapon · target 1,400",
+      "Use alt materials/Kina for Splendent Star Dragon Lord crafting: prioritize accessories first, then the weapon. Use Draupnir Exploration’s guaranteed armor only when it improves your gear. At 1,400, continue to Vakron without waiting to finish the crafted set.",
       1100,
       3,
       [
         "Avoid Dapnir gear from 1★ Conquest dungeons on the route to 1,400 iLvL. The Draupnir reward listed here is specifically Exploration’s guaranteed armor reward; do not confuse it with Conquest gear.",
-        "Best-in-slot crafting target: Splendent Star Dragon Lord. Start with the weapon if it is a useful upgrade; there is no separate lower crafted set to make first. Green quests still supply the early accessories.",
+        "Crafting priority: Splendent Star Dragon Lord accessories first—one necklace, two earrings and two rings—then the weapon. Green quests supply your early accessories until you can replace them with the crafted pieces.",
         "Exploration Draupnir opens at the chart’s 700-iLvL gate. Work toward three reward cubes for guaranteed Legend armor; x3 is reward progress, not necessarily three runs. The chart estimates +16 from this armor upgrade.",
         "Use eligible, useful alt drops to replace weak armor, without investing in Dapnir 1★ Conquest gear. Keep useful 1★/2★ alt farming supplying Kina and crafting materials.",
-        "Already at 1,400? Move directly to step 6. You can craft the weapon alongside Vakron upgrades instead; neither crafting nor Draupnir is a mandatory extra step once you qualify."
+        "Already at 1,400? Move directly to step 6 and continue crafting alongside dungeon progression. Keep the accessories-first, weapon-second priority; neither the full crafted set nor Draupnir farming is required once you qualify."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
       [
-        "weapon-crafting",
+        "crafting",
         "draupnir",
         "alt-farm"
       ],
@@ -95,32 +95,32 @@ const DATA = {
     [
       "Claim the guaranteed Vakron armor",
       "1,400 iLvL · Vakron armor + enhancements → 1,600",
-      "Get Vakron’s guaranteed chest armor, then enhance lasting equipment toward Transcendence Stage 1 at 1,600. Continue the Splendent Star Dragon Lord weapon plan here if you did not need it before Vakron.",
+      "Get Vakron’s guaranteed chest armor, then enhance lasting equipment toward Transcendence Stage 1 at 1,600. Continue Splendent Star Dragon Lord crafting alongside these upgrades: accessories first, then the weapon.",
       1170,
       2,
       [
         "Vakron armor: chart estimate +32 iLvL. Claim exactly three reward cubes across two runs, 120 Odyle, for the guaranteed chest reward.",
         "Enhancement example: nine Legend pieces to +11, the other bracelet and guard to +10, and the rest to about +8. The chart estimates +159 from these upgrades.",
-        "Finish a useful Splendent Star Dragon Lord weapon upgrade with alt materials/Kina if still needed. Keep the green-quest accessories until you can work on the crafted accessory pieces.",
+        "Use alt materials/Kina to prioritize Splendent Star Dragon Lord accessories, then craft the weapon. Keep green-quest accessories until their crafted replacements are ready; do not delay the next dungeon gate just to finish the set.",
         "The chart’s original total is roughly 1,611. Quest rewards, crafted pieces and existing equipment change your result: use your actual 1,600 iLvL to decide when to enter Stage 1.",
         "Spend on equipment you will keep. Do not finish every example enhancement or buy extra leveling-dungeon reward boxes after reaching the next useful gate."
       ],
       "1,400 → 1,600 · Vakron and lasting gear",
       [
         "vakron",
-        "weapon-crafting"
+        "crafting"
       ],
       "Primary: player gear chart + reviewed green-quest and Splendent Star Dragon Lord corrections"
     ],
     [
       "Build starter Arcana and your crafted accessory set",
       "1,600 Stage 1 → 1,900 Stage 2",
-      "At 1,600, get starter Arcana from Stage 1. Work on Splendent Star Dragon Lord accessories and any missing weapon upgrade, then socket intermediate Magicstones as needed to reach Stage 2 at 1,900.",
+      "At 1,600, get starter Arcana from Stage 1. Prioritize Splendent Star Dragon Lord accessories, then the weapon, and socket intermediate Magicstones as needed to reach Stage 2 at 1,900.",
       1100,
       11,
       [
         "Stage-1 example: two green and three grey Arcana cards, estimated +140 iLvL.",
-        "Crafting target for every piece: Splendent Star Dragon Lord weapon, one necklace, two earrings and two rings. Use alt materials/Kina and replace the green-quest accessories as the crafted pieces become available.",
+        "Craft Splendent Star Dragon Lord accessories first: one necklace, two earrings and two rings. Craft the weapon afterward. Use alt materials/Kina and replace the green-quest accessories as the crafted pieces become available.",
         "Keep pieces you have already crafted; this is completion of the same target set, not another mandatory crafted tier.",
         "Use intermediate Magicstones on equipment worth keeping as needed to reach 1,900; revisit sockets after 2,100. The chart estimates +105 from stones, but actual rolls and gear change the gain.",
         "The original chart totals about 2,000 in this phase. Enter Stage 2 once your actual gear reaches 1,900; avoid perfect early rolls or heavy spending on temporary story gear."
@@ -176,7 +176,7 @@ const DATA = {
         "Get all Legend gear to about +11. Weapon/accessories can optionally go to +15 for more damage; that is not a mandatory entry requirement.",
         "The chart’s Conquest label is 2,000, while its own 3★ unlock note is 2,100. Check the dungeon gate rather than treating either as independently verified.",
         "Supporting pity plan: claim both reward boxes; fourteen runs give one pity ticket and 28 give two for Nuakum Guard. Alts continue funding materials and Kina.",
-        "Keep the same Splendent Star Dragon Lord crafting target. Finish missing pieces when affordable; do not replace completed pieces with a separate crafted tier."
+        "Keep the same Splendent Star Dragon Lord crafting target and prioritize any missing accessories before the weapon. Keep completed pieces; no separate crafted tier is required."
       ],
       "3★ armor · Ferocious Horn Den",
       [
@@ -203,12 +203,12 @@ const DATA = {
     [
       "Get Legend Arcana and finish your crafted set",
       "Stage 4 · Legend Arcana · 2,700 planning target",
-      "Farm Legend Arcana in Transcendence Stage 4. Finish any missing Splendent Star Dragon Lord weapon or accessory pieces, then improve useful stats and enhancements on the gear you keep.",
+      "Farm Legend Arcana in Transcendence Stage 4. Finish missing Splendent Star Dragon Lord accessories first, then the weapon, and improve useful stats and enhancements on the gear you keep.",
       1640,
       8,
       [
         "Legend/gold Arcana: chart estimate +160 iLvL. Work on useful stats, enhancements, set effects and class skills/passives.",
-        "Your crafting target remains Splendent Star Dragon Lord: weapon, necklace, two earrings and two rings. If those pieces are complete, focus on improving them rather than crafting the same slots again.",
+        "Your crafting target remains Splendent Star Dragon Lord. Prioritize missing accessories—necklace, two earrings and two rings—then the weapon. If those pieces are complete, improve them rather than crafting the same slots again.",
         "The original chart reaches about 2,700 after its armor, Arcana and crafting phases. This is a reference total, not a promise for the corrected route; quest rewards and your actual crafted pieces change the result.",
         "Stage-4 entry iLvL is not given in the chart. Its ten-player raid claim at 2,700 is conditional on requirements staying unchanged.",
         "Keep funding the main through alt materials/Kina. Use compatible Transfer Crafting when appropriate, without treating it as another required gear set."
@@ -316,7 +316,7 @@ const DATA = {
     [
       "craft",
       "Queue crafting before sleep or AFK",
-      "Prepare your weapon profession and Handicrafting for Splendent Star Dragon Lord weapon/accessory pieces. Use green quests for early accessories and queue inexpensive training recipes while AFK.",
+      "Prepare Handicrafting for Splendent Star Dragon Lord accessories first, then your class’s weapon profession. Use green quests for early accessories and queue inexpensive training recipes while AFK.",
       906,
       "Routine",
       null,
@@ -620,18 +620,18 @@ const DATA = {
     },
     {
       "id": "crafting",
-      "activity": "Splendent Star Dragon Lord · weapon and accessories",
+      "activity": "Splendent Star Dragon Lord · accessories first, then weapon",
       "where": "Handicrafting for accessories; weapon profession depends on class. Use main crafting with alt materials/Kina. Ranger/Chanter: Handicrafting; Gladiator/Templar/Assassin/Cleric: Weaponsmithing; Sorcerer/Spiritmaster: Alchemy.",
-      "rewards": "Splendent Star Dragon Lord weapon, one necklace, two earrings and two rings",
-      "plan": "The best-in-slot crafting target for every piece is Splendent Star Dragon Lord. Use green quests for early accessories, prepare a useful weapon, then finish the accessory set alongside Arcana and dungeon progression. Keep completed pieces and enhance them; there is no separate crafted set required at each breakpoint.",
+      "rewards": "Splendent Star Dragon Lord: one necklace, two earrings and two rings, then the weapon",
+      "plan": "Prioritize crafting accessories first (one necklace, two earrings and two rings), then the weapon. Use alt materials/Kina. Green quests supply the early accessories until replacements are ready. Craft alongside dungeon progression without delaying entry gates, and keep completed pieces; there is no separate crafted set at each breakpoint.",
       "source": "Reviewed crafting correction + supporting profession/material advice from the reviewed guide"
     },
     {
       "id": "weapon-crafting",
-      "activity": "Splendent Star Dragon Lord · weapon",
+      "activity": "Splendent Star Dragon Lord · weapon after accessories",
       "where": "Craft the weapon using your class’s weapon profession, with materials/Kina from alts. Supporting guide: Ranger/Chanter → Handicrafting; Gladiator/Templar/Assassin/Cleric → Weaponsmithing; Sorcerer/Spiritmaster → Alchemy.",
       "rewards": "Splendent Star Dragon Lord weapon; actual iLvL gain depends on the piece replaced",
-      "plan": "Use alt materials/Kina. Craft before Vakron if it is useful for reaching 1,400; otherwise continue alongside Vakron upgrades. Keep this same weapon target in the later phases. The chart’s original +17 weapon estimate is a reference, not a fixed gain for this corrected item.",
+      "plan": "Craft the weapon after prioritizing the Splendent Star Dragon Lord accessory set. Use alt materials/Kina, continuing alongside dungeon progression; do not make the weapon a prerequisite for Vakron if already at 1,400. The old chart’s +17 is a reference, not a fixed gain for this corrected item.",
       "source": "Reviewed crafting-name correction + reviewed video/text profession advice"
     },
     {
@@ -870,9 +870,9 @@ const DATA = {
             "Use green-quest rewards for early accessories and avoid Dapnir gear from 1★ Conquest on the way to 1,400. Gain varies; the original chart used +118 from crafted accessories."
           ],
           [
-            "Splendent Star Dragon Lord weapon",
+            "Plan Splendent Star Dragon Lord crafting",
             null,
-            "Craft with alt materials/Kina when useful. Can be completed alongside Vakron if already at 1,400. Original chart weapon gain: +17; actual gain varies."
+            "Accessories first (necklace, two earrings, two rings), then weapon. Green quests cover early accessories; continue to Vakron at 1,400 without waiting to finish crafting."
           ],
           [
             "Exploration · Draupnir",
@@ -894,7 +894,7 @@ const DATA = {
           [
             "Enhance useful gear",
             159,
-            "Nine Legend pieces +11; other bracelet/guard +10; rest about +8. Finish the weapon if needed; proceed to Stage 1 once at 1,600."
+            "Nine Legend pieces +11; other bracelet/guard +10; rest about +8. Continue accessory-first crafting alongside upgrades; proceed to Stage 1 at 1,600."
           ]
         ],
         "chartTotal": 1611
@@ -909,9 +909,9 @@ const DATA = {
             "Two green and three grey Arcana cards"
           ],
           [
-            "Splendent Star Dragon Lord accessories / missing weapon",
+            "Splendent Star Dragon Lord accessories, then weapon",
             null,
-            "One necklace, two earrings and two rings; same crafting target as the weapon. Keep completed pieces. The old chart’s +144 staged-crafting gain is not a fixed gain for this corrected set."
+            "Craft one necklace, two earrings and two rings first, then the weapon. Keep completed pieces. The old +144 staged-crafting gain is not fixed for this corrected set."
           ],
           [
             "Intermediate Magicstones",
@@ -955,17 +955,17 @@ const DATA = {
           [
             "Finish / improve Splendent Star Dragon Lord pieces",
             null,
-            "Finish missing pieces or improve owned gear. Do not craft a second set for another +98; that figure belongs to the chart’s old staged-crafting example."
+            "Finish missing accessories first, then the weapon, or improve owned gear. Do not craft a second set for another +98; that figure belongs to the old chart example."
           ]
         ],
         "chartTotal": 2700
       }
     ],
     "notes": [
-      "Green quests replace early accessory crafting. Splendent Star Dragon Lord is the reviewed crafting target for every weapon/accessory piece throughout the route; complete and improve the same set as resources allow.",
+      "Green quests supply early accessories. For Splendent Star Dragon Lord crafting, prioritize one necklace, two earrings and two rings first, then the weapon. This same target remains throughout the route; keep and improve completed pieces.",
       "For the 1,400 breakpoint, avoid Dapnir gear from 1★ Conquest dungeons. The optional Draupnir armor bridge in this route refers to Exploration’s guaranteed reward, not Conquest gear.",
       "The chart totals remain original reference figures. Its old +17, +144 and +98 crafting rows do not establish fixed gains for the corrected crafting target and must not be counted as repeated gains from crafting the same slots.",
-      "The reviewed guide puts weapon crafting after Vakron and uses Draupnir as a fallback. The chart lists both earlier. Prepare useful upgrades in step 5, but at 1,400 proceed to Vakron; remaining weapon work can continue in step 6.",
+      "The chart and reviewed guide differ on crafting timing. The corrected route uses accessories-first, weapon-second priority; crafting can continue alongside dungeon progression, so proceed to Vakron once at 1,400.",
       "Draupnir/Vakron x3 means reward-cube progress, not necessarily three runs. Vakron’s reviewed guarantee uses exactly three cubes across two runs and 120 Odyle.",
       "The chart labels its last section 2,000 but says 3★ unlocks at 2,100. Use 2,100 as the planning gate and verify the actual entry requirement in game.",
       "The chart uses Legend +0 for the belt/amulet; the reviewed video calls these Unique +0. The route retains the chart’s Legend +0 target.",
