@@ -27,7 +27,7 @@ guideChecks.d.querySelector('[data-view="daily"]').click();assert.match(guideChe
 guideChecks.d.querySelector('[data-view="weekly"]').click();assert.equal(guideChecks.d.getElementById('check-nightmare').checked,true);assert.equal(guideChecks.d.getElementById('check-nightmare').closest('.checklist-group').getAttribute('aria-label'),'Accumulating tasks');assert.match(guideChecks.d.getElementById('check-nightmare').closest('.task').textContent,/Accumulating, not a weekly reset/);assert.equal(guideChecks.d.getElementById('check-daily-dungeon').checked,true);assert.match(guideChecks.d.getElementById('check-daily-dungeon').closest('.task').textContent,/14 entries\/week/);assert.equal(guideChecks.d.querySelectorAll('.task').length,8);
 const originalProgress=await open({checks:{'route:2':true,'route:3':true,'route:8':true},settings:{hour:0,day:3,auto:false},periods:{}});
 assert.equal(originalProgress.d.getElementById('character-ilvl').value,'');assert.equal(originalProgress.d.querySelector('[data-id="2"]').checked,true);
-assert.match(originalProgress.d.querySelector('[data-id="2"]').closest('.step').textContent,/Farm Vakron and improve lasting gear/);
+assert.match(originalProgress.d.querySelector('[data-id="2"]').closest('.step').textContent,/Claim the guaranteed Vakron armor/);
 assert.equal(originalProgress.d.querySelector('[data-id="3"]').checked,true);
 assert.equal(originalProgress.d.querySelector('[data-id="9"]').checked,false);
 assert.equal(originalProgress.d.querySelector('[role=progressbar]').getAttribute('aria-valuemax'),'12');
@@ -63,7 +63,7 @@ assert.deepEqual([...gd.querySelectorAll('.step input')].map(node=>node.dataset.
 assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 assert.match(gd.getElementById('route-step-11').textContent,/1,600 Stage 1/);
 assert.match(gd.getElementById('route-step-11').textContent,/Where: Transcendence Stage 1/);
-assert.match(gd.getElementById('route-step-10').textContent,/Get accessory upgrades from green quests/);assert.match(gd.getElementById('route-step-3').textContent,/Check your iLvL before entering Vakron/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
+assert.match(gd.getElementById('route-step-10').textContent,/Get accessory upgrades from green quests/);assert.match(gd.getElementById('route-step-3').textContent,/Prepare your weapon and claim Draupnir armor/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent Star Dragon Lord/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Star Dragon Lord/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
 const gearBefore=gw.localStorage.getItem(storageKey);
 gd.querySelector('[data-view="rewards"]').click();
 assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');
@@ -80,9 +80,12 @@ gd.querySelector('[data-view="daily"]').click();gd.querySelector('[data-reward-t
 assert.equal(gw.localStorage.getItem(storageKey),gearBefore);
 gd.querySelector('[data-view="route"]').click();assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 const guideData=JSON.parse(sourceScripts[0].replace(/^const DATA = /,'').trim().replace(/;$/,''));
-let estimatedTotal=0;const knownRewards=new Set(guideData.rewardSources.map(item=>item.id));
-for(const stage of guideData.gearGuide.stages){if(stage.rows.some(row=>row[1]===null)){assert.equal(stage.totalLabel,'original chart total');estimatedTotal=stage.total;continue}estimatedTotal+=stage.rows.reduce((sum,row)=>sum+row[1],0);assert.equal(estimatedTotal,stage.total)}
-assert.equal(estimatedTotal,2700);assert.equal(knownRewards.size,guideData.rewardSources.length);
+const knownRewards=new Set(guideData.rewardSources.map(item=>item.id));
+for(const stage of guideData.gearGuide.stages)assert.ok(Number.isFinite(stage.chartTotal));
+const craftingRows=guideData.gearGuide.stages.flatMap(stage=>stage.rows).filter(row=>/Splendent Star Dragon Lord/.test(row[0]));
+assert.equal(craftingRows.length,3);assert.ok(craftingRows.every(row=>row[1]===null),'Corrected crafting gains must not reuse the old tier estimates');
+assert.doesNotMatch(sourceScripts[0],/White Dragon|Dark Dragon|Wise Dragon|Ebony Dragon/);
+assert.equal(knownRewards.size,guideData.rewardSources.length);
 for(const milestone of guideData.route)for(const id of milestone[7])assert.ok(knownRewards.has(id),'Unknown route reward '+id);
 for(const group of ['daily','weekly'])for(const task of guideData[group])if(task[6]?.rewardTarget)assert.ok(knownRewards.has(task[6].rewardTarget));
 const corrupt=await open('{broken');assert.equal(corrupt.w.localStorage.getItem(storageKey),'{broken');assert.equal(corrupt.d.getElementById('import-data').disabled,false);
