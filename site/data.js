@@ -25,6 +25,7 @@ const DATA = {
       [
         "Level-45 gear: 645; sealed-dungeon Daevanion points: 360; feather amulet: 65; stronghold belt: 65; Abyss-feather board points: 52; two Clash Runes: 82. The chart totals 1,269 as an example, not a guaranteed value.",
         "Amulet and belt: Legend +0. Two Clash Runes: +1 each; further enhancement can destroy them.",
+        "Collect Abyss feathers for Daevanion points on the PvP board. The board’s stat upgrades contribute to overall iLvL, so this also helps your progress toward 1,400.",
         "Complete green quests for early accessory upgrades. Supporting launch advice: unlock Duties and Nightmare at 45, and prioritize Pet Souls/Cube Keys from the five daily Duties.",
         "The older collection notes add about 186 Altgard feathers / 560 total for the Monolith, then missing Abyss feathers. Synchronize the Monolith to alts; return to crowded Abyss areas later."
       ],
@@ -62,12 +63,14 @@ const DATA = {
       10,
       [
         "Use quest rewards to replace weak accessories while finishing world exploration.",
+        "Still working toward 1,400 iLvL? Collect any missing Abyss feathers and use their Daevanion points on the PvP board. Its stat upgrades contribute to overall iLvL, alongside your equipment upgrades.",
         "Check your actual iLvL after equipping upgrades. The original chart’s +118 accessory gain assumed crafting and is not a fixed gain from quests.",
         "After equipping the quest rewards, prepare useful armor upgrades and your accessory-first crafting plan in step 5. If already at 1,400, go straight to Vakron; you do not need to finish crafting before entry."
       ],
       "700 → 1,400 · accessories, weapon and Draupnir",
       [
-        "green-quests"
+        "green-quests",
+        "abyss-feathers"
       ],
       "Primary: player gear chart + reviewed green-quest and Splendent Star Dragon Lord corrections"
     ],
@@ -596,11 +599,11 @@ const DATA = {
     },
     {
       "id": "abyss-feathers",
-      "activity": "Abyss feathers",
+      "activity": "Abyss feathers · Daevanion PvP board",
       "where": "Collect feathers in the Abyss; return during a quieter window if needed",
-      "rewards": "Daevanion board points",
-      "plan": "Chart: 52 board points, listed as an estimated +52 iLvL contribution.",
-      "source": "Uploaded Season 1 gear chart · Sep 29, 2026"
+      "rewards": "Daevanion points for the PvP board; board stat upgrades contribute to overall iLvL",
+      "plan": "Collect missing Abyss feathers and use their Daevanion points on the PvP board while progressing toward 1,400. The chart lists 52 board points and an estimated +52 overall iLvL contribution. This is already part of its foundation total; do not add the same contribution again at the 1,400 stage.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + reviewed PvP-board clarification"
     },
     {
       "id": "runes",
@@ -848,9 +851,9 @@ const DATA = {
             "Legend +0 target"
           ],
           [
-            "Abyss feathers",
+            "Abyss feathers → Daevanion PvP board",
             52,
-            "52 Daevanion board points"
+            "52 Daevanion points for the PvP board; its stat upgrades contribute to overall iLvL and help toward 1,400."
           ],
           [
             "Two Clash Runes",
@@ -868,6 +871,11 @@ const DATA = {
             "Green quests → accessory upgrades",
             null,
             "Use green-quest rewards for early accessories and avoid Dapnir gear from 1★ Conquest on the way to 1,400. Gain varies; the original chart used +118 from crafted accessories."
+          ],
+          [
+            "Missing Abyss feathers → PvP board",
+            null,
+            "Collect missing feathers and use the Daevanion points for board stats to help reach 1,400. The chart’s +52 is already counted in the foundation total; this is a reminder, not another +52."
           ],
           [
             "Plan Splendent Star Dragon Lord crafting",
