@@ -55,7 +55,7 @@ Hourly/push/manual builds restore `.cache/questlog-schedule.json` through Action
 
 ## Build and deployment
 
-`scripts/build.sh` copies `site/` into `dist/` and adds `.nojekyll`. All stylesheet, script and icon paths are relative so the app works under the repository's Pages path.
+`scripts/build.sh` copies `site/` into `dist/`, adds `.nojekyll` and appends a SHA-256 content version to stylesheet/script URLs. Changed assets therefore refresh after a deployment rather than loading old cached scripts with new HTML. The artifact validator verifies each version against the actual file. All stylesheet, script and icon paths remain relative so the app works under the repository's Pages path. URL versions affect asset caching only, not the page origin or localStorage key.
 
 `.github/workflows/ci.yml` runs `npm ci`, `npm test`, `npm run build` and `npm run validate`. It uploads `dist/` and deploys to GitHub Pages on main-branch pushes, manual runs and the hourly `17 * * * *` schedule. Pull requests only run checks. Repository Pages must use GitHub Actions as its source.
 
