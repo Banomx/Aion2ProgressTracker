@@ -63,50 +63,51 @@ const DATA = {
       [
         "Use quest rewards to replace weak accessories while finishing world exploration.",
         "Check your actual iLvL after equipping upgrades. The original chart’s +118 accessory gain assumed crafting and is not a fixed gain from quests.",
-        "Next, craft the weapon and claim Draupnir armor to reach the 1,400 Vakron target. White/Dark Dragon accessory crafting belongs in the 1,600–1,900 phase."
+        "Next, check whether you meet Vakron’s 1,400 entry target. If you already qualify, proceed straight to Vakron; weapon crafting is not a mandatory prerequisite. White/Dark Dragon accessory crafting belongs in the 1,600–1,900 phase."
       ],
-      "700 → 1,400 · accessories, weapon and Draupnir",
+      "700 → 1,400 · green quests and entry check",
       [
         "green-quests"
       ],
       "Primary: early green-quest correction to the Sep-29 gear chart"
     ],
     [
-      "Craft the weapon and claim Draupnir armor",
-      "Crafted weapon + Draupnir armor · target 1,400 iLvL",
-      "After upgrading accessories through green quests, craft the main’s weapon with alt materials/Kina and use Exploration Draupnir’s guaranteed armor to bridge to Vakron.",
+      "Check your iLvL before entering Vakron",
+      "Below 1,400? Fill the gap · already there? Continue to step 6",
+      "Equip your green-quest accessories and other upgrades, then check your actual iLvL. At 1,400, move straight to Vakron. Below that, choose only the upgrades needed to meet its entry requirement.",
       1100,
       3,
       [
-        "The chart estimates +17 iLvL from the crafted weapon and +16 from Draupnir’s guaranteed Legend armor. Reach 1,400 with your actual equipped gear.",
-        "Weapon profession from the supporting guide: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster. If training it yourself, queue inexpensive recipes while AFK.",
-        "Draupnir is the chart’s 700-iLvL Exploration step. Work toward three reward cubes for guaranteed armor; x3 is reward progress, not necessarily three runs.",
-        "Use eligible alt drops to replace weak armor. Continue useful 1★/2★ alt farming for Kina and crafting materials.",
-        "Early accessory crafting is replaced by the previous green-quest step. Start the later White/Dark Dragon accessory upgrades in the 1,600–1,900 phase."
+        "If armor is the gap, Exploration Draupnir is available at the chart’s 700 gate. Its guaranteed Legend armor is estimated at +16 iLvL; x3 means reward-cube progress, not necessarily three runs.",
+        "If the weapon is the gap, a crafted upgrade is another option (chart estimate +17). The main crafting advice is in step 6; you do not need to complete both upgrades before Vakron.",
+        "Check eligible alt drops before spending more Kina or Odyle. The chart’s original 1,420 total assumed crafted accessories, so green quests can leave you above or below it.",
+        "The reviewed guide places Vakron before weapon crafting and lists Draupnir as a later fallback. The newer chart places both upgrades before Vakron. This entry check keeps them available when needed without forcing lower-tier farming once you qualify."
       ],
-      "700 → 1,400 · accessories, weapon and Draupnir",
+      "700 → 1,400 · green quests and entry check",
       [
-        "weapon-crafting",
-        "draupnir",
-        "alt-farm"
+        "draupnir"
       ],
-      "Primary: Sep-29 gear chart + early green-quest correction"
+      "Entry-check recommendation: Sep-29 chart + reviewed guide + green-quest correction"
     ],
     [
-      "Claim the guaranteed Vakron armor",
-      "1,400 iLvL · Vakron armor → 1,600 target",
-      "Get the guaranteed Vakron chest armor, then enhance lasting gear to reach the chart’s next step: Transcendence Stage 1 at 1,600.",
+      "Farm Vakron and improve lasting gear",
+      "1,400 iLvL · armor, weapon and enhancements → 1,600",
+      "Claim Vakron’s guaranteed chest armor, review your weapon, then enhance equipment worth keeping. Stop at the next useful unlock: Transcendence Stage 1 at 1,600.",
       1170,
       2,
       [
         "Vakron armor: chart estimate +32 iLvL. Its x3 shorthand is paired with the supporting reward method: exactly three cubes across two runs, 120 Odyle.",
+        "If your weapon still needs an upgrade, craft it using alt materials/Kina; the early chart estimate is +17 iLvL. Skip this purchase if your existing weapon already serves the goal. Keep green-quest accessories for now; later White/Dark Dragon upgrades are in step 7.",
+        "Weapon profession from the supporting guide: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster. If training it yourself, queue inexpensive recipes while AFK. Useful 1★/2★ alt farming supplies Kina and materials.",
         "Enhance nine Legend pieces to +11, the other bracelet and guard to +10, and the rest to about +8. The chart estimates +159 from these upgrades.",
         "The original chart totals roughly 1,611 here. Your green-quest accessory replacements and existing gear change the result; use 1,600 as the next progression target.",
-        "Keep spending on equipment you will use; avoid unnecessary leveling-dungeon reward boxes."
+        "Treat the enhancement levels as the chart’s example, not a list to finish before entering Stage 1. Prioritize useful upgrades, avoid unnecessary leveling-dungeon reward boxes and continue once you meet 1,600."
       ],
-      "1,400 → 1,600 · Vakron and enhancements",
+      "1,400 → 1,600 · Vakron and lasting gear",
       [
-        "vakron"
+        "vakron",
+        "weapon-crafting",
+        "alt-farm"
       ],
       "Primary: Sep-29 gear chart + early green-quest correction"
     ],
@@ -621,15 +622,15 @@ const DATA = {
       "activity": "Crafted accessories and weapon",
       "where": "Handicrafting for accessories; weapon profession depends on class. Use main crafting with alt materials/Kina. Ranger/Chanter: Handicrafting; Gladiator/Templar/Assassin/Cleric: Weaponsmithing; Sorcerer/Spiritmaster: Alchemy.",
       "rewards": "Necklace, two earrings, two rings and weapon; later dragon upgrades",
-      "plan": "Use green quests for early accessory upgrades around 1,400. Craft the weapon (chart estimate +17), then craft later White/Dark Dragon (+144) and Wise/Ebony Dragon (+98) upgrades when ready.",
+      "plan": "Use green quests for early accessories. Craft the weapon if it is a useful upgrade (chart estimate +17), before Vakron only if needed to reach its gate. Later weapon/accessory upgrades are White/Dark Dragon (+144) and Wise/Ebony Dragon (+98).",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
     },
     {
       "id": "weapon-crafting",
-      "activity": "Crafted weapon · early gear bridge",
+      "activity": "Crafted weapon · upgrade when needed",
       "where": "Craft the weapon using your class’s weapon profession, with materials/Kina from alts. Supporting guide: Ranger/Chanter → Handicrafting; Gladiator/Templar/Assassin/Cleric → Weaponsmithing; Sorcerer/Spiritmaster → Alchemy.",
       "rewards": "Crafted weapon upgrade; chart estimate +17 iLvL",
-      "plan": "Use green-quest accessories for the early breakpoint. Combine the weapon with Draupnir armor to reach 1,400; save White/Dark and Wise/Ebony Dragon accessory crafting for the later gear phases.",
+      "plan": "Before 1,400, craft only if the weapon upgrade helps reach Vakron’s gate. If already eligible, prioritize Vakron and review crafting alongside lasting gear in step 6. Do not count the +17 estimate twice. White/Dark and Wise/Ebony Dragon upgrades remain later phases.",
       "source": "Primary: Sep-29 gear chart; weapon professions: reviewed video/text guide"
     },
     {
@@ -637,7 +638,7 @@ const DATA = {
       "activity": "Exploration · Draupnir",
       "where": "Expedition → Exploration → Draupnir · chart gate 700 iLvL",
       "rewards": "Guaranteed Legend armor via reward-cube progress",
-      "plan": "Chart estimate +16 iLvL; use it to bridge to Vakron. Keep the reviewed three-cube reward plan; do not interpret x3 as three runs.",
+      "plan": "Chart estimate +16 iLvL. Use this as a fallback if it upgrades weak armor and helps reach the next gate; at 1,400, prioritize Vakron. Keep the three-cube reward plan; do not interpret x3 as three runs.",
       "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
     },
     {
@@ -871,12 +872,12 @@ const DATA = {
           [
             "Craft weapon",
             17,
-            "Use alt materials; eligible alt drops can replace weak armor"
+            "Optional bridge if needed for 1,400; otherwise review the weapon alongside Vakron upgrades. Count this estimate once."
           ],
           [
             "Exploration · Draupnir",
             16,
-            "Guaranteed Legend armor; chart x3 / reviewed three-cube plan"
+            "Fallback if needed to reach 1,400; guaranteed Legend armor via three reward cubes. Skip lower-tier farming once eligible for Vakron."
           ]
         ],
         "totalLabel": "original chart total"
@@ -894,7 +895,7 @@ const DATA = {
           [
             "Enhance useful gear",
             159,
-            "Nine Legend pieces +11; other bracelet/guard +10; rest about +8"
+            "Chart example: nine Legend pieces +11; other bracelet/guard +10; rest about +8. Review the weapon here if not upgraded earlier; move to Stage 1 once at 1,600."
           ]
         ]
       },

@@ -25,9 +25,10 @@ const expired={...backup.state,settings:{hour:0,day:3,auto:true},periods:{daily:
 const guideChecks=await open({checks:{'daily:main:festival':true,'weekly:main:nightmare':true,'weekly:main:daily-dungeon':true},settings:{hour:0,day:3,auto:false},periods:{}});
 guideChecks.d.querySelector('[data-view="daily"]').click();assert.match(guideChecks.d.getElementById('check-festival').closest('.task').textContent,/2 keys\/day/);assert.equal(guideChecks.d.getElementById('check-festival').checked,true);assert.match(guideChecks.d.getElementById('check-duties').closest('.task').textContent,/Server-wide/);
 guideChecks.d.querySelector('[data-view="weekly"]').click();assert.equal(guideChecks.d.getElementById('check-nightmare').checked,true);assert.equal(guideChecks.d.getElementById('check-nightmare').closest('.checklist-group').getAttribute('aria-label'),'Accumulating tasks');assert.match(guideChecks.d.getElementById('check-nightmare').closest('.task').textContent,/Accumulating, not a weekly reset/);assert.equal(guideChecks.d.getElementById('check-daily-dungeon').checked,true);assert.match(guideChecks.d.getElementById('check-daily-dungeon').closest('.task').textContent,/14 entries\/week/);assert.equal(guideChecks.d.querySelectorAll('.task').length,8);
-const originalProgress=await open({checks:{'route:2':true,'route:8':true},settings:{hour:0,day:3,auto:false},periods:{}});
+const originalProgress=await open({checks:{'route:2':true,'route:3':true,'route:8':true},settings:{hour:0,day:3,auto:false},periods:{}});
 assert.equal(originalProgress.d.getElementById('character-ilvl').value,'');assert.equal(originalProgress.d.querySelector('[data-id="2"]').checked,true);
-assert.match(originalProgress.d.querySelector('[data-id="2"]').closest('.step').textContent,/Claim the guaranteed Vakron armor/);
+assert.match(originalProgress.d.querySelector('[data-id="2"]').closest('.step').textContent,/Farm Vakron and improve lasting gear/);
+assert.equal(originalProgress.d.querySelector('[data-id="3"]').checked,true);
 assert.equal(originalProgress.d.querySelector('[data-id="9"]').checked,false);
 assert.equal(originalProgress.d.querySelector('[role=progressbar]').getAttribute('aria-valuemax'),'12');
 const statue=originalProgress.d.querySelector('[data-id="9"]');statue.checked=true;statue.dispatchEvent(new originalProgress.w.Event('change',{bubbles:true}));
@@ -62,7 +63,7 @@ assert.deepEqual([...gd.querySelectorAll('.step input')].map(node=>node.dataset.
 assert.equal(gd.querySelector('[data-id="2"]').checked,true);
 assert.match(gd.getElementById('route-step-11').textContent,/1,600 Stage 1/);
 assert.match(gd.getElementById('route-step-11').textContent,/Where: Transcendence Stage 1/);
-assert.match(gd.getElementById('route-step-10').textContent,/Get accessory upgrades from green quests/);assert.match(gd.getElementById('route-step-3').textContent,/Craft the weapon and claim Draupnir armor/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
+assert.match(gd.getElementById('route-step-10').textContent,/Get accessory upgrades from green quests/);assert.match(gd.getElementById('route-step-3').textContent,/Check your iLvL before entering Vakron/);assert.match(gd.getElementById('route-step-11').textContent,/Splendent White Dragon or Splendent Dark Dragon/);assert.match(gd.getElementById('route-step-8').textContent,/Splendent Wise Dragon or Splendent Ebony Dragon/);assert.match(gd.getElementById('route-step-11').querySelector('.route-source').textContent,/Primary/);
 const gearBefore=gw.localStorage.getItem(storageKey);
 gd.querySelector('[data-view="rewards"]').click();
 assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');
