@@ -56,6 +56,33 @@ assert.equal(tw.timerTest.timerCountdown(Date.parse('2026-10-01T00:30:00Z'),new 
 assert.equal(tw.timerTest.nextTimerTimes([30],new Date('2026-10-01T00:30:00Z'))[0],Date.parse('2026-10-01T00:30Z'));
 await importFile({...backup,state:{...backup.state,timers:{shugo:[1440]}}});assert.match(d.getElementById('status').textContent,/Import rejected/);
 assert.equal(tw.timerTest.activeTimerWindow({times:[0],durationMinutes:10},new Date('2026-10-01T00:05Z')).end,Date.parse('2026-10-01T00:10Z'));assert.equal(tw.timerTest.activeTimerWindow({times:[0],durationMinutes:10},new Date('2026-10-01T00:10Z')),null);
+// Reward navigation/search is read-only and all old route completions retain their meaning.
+const gearBrowser=await open(deploymentState);const gd=gearBrowser.d,gw=gearBrowser.w;
+assert.deepEqual([...gd.querySelectorAll('.step input')].map(node=>node.dataset.id),['0','1','9','10','3','2','11','4','5','6','7','8']);
+assert.equal(gd.querySelector('[data-id="2"]').checked,true);
+assert.match(gd.getElementById('route-step-11').textContent,/1,600 Stage 1/);
+assert.match(gd.getElementById('route-step-11').textContent,/Where: Transcendence Stage 1/);
+const gearBefore=gw.localStorage.getItem(storageKey);
+gd.querySelector('[data-view="rewards"]').click();
+assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');
+assert.equal(gd.querySelectorAll('.gear-stage').length,6);
+assert.match(gd.querySelector('.gear-stage:last-of-type')?.textContent||gd.getElementById('gear-guide').textContent,/2,700/);
+assert.match(gd.getElementById('reward-runes').textContent,/acquisition location is not given/);
+assert.match(gd.getElementById('reward-horn-conquest').textContent,/2,000 label conflicts/);
+let search=gd.getElementById('reward-search');search.value='Arcana';search.dispatchEvent(new gw.Event('input',{bubbles:true}));
+assert.ok([...gd.querySelectorAll('.reward-card')].filter(card=>!card.hidden).length>0);
+assert.equal(gd.getElementById('reward-stage1').hidden,false);assert.equal(gd.getElementById('reward-nightmare').hidden,true);
+search.value='not-an-existing-reward';search.dispatchEvent(new gw.Event('input',{bubbles:true}));assert.equal(gd.getElementById('reward-empty').hidden,false);
+search.value='';search.dispatchEvent(new gw.Event('input',{bubbles:true}));assert.equal(gd.querySelectorAll('.reward-card[hidden]').length,0);
+gd.querySelector('[data-view="daily"]').click();gd.querySelector('[data-reward-target="shugo"]').click();assert.equal(gd.getElementById('tab-rewards').getAttribute('aria-selected'),'true');assert.match(gd.getElementById('reward-shugo').textContent,/Daevanion Crystals first/);
+assert.equal(gw.localStorage.getItem(storageKey),gearBefore);
+gd.querySelector('[data-view="route"]').click();assert.equal(gd.querySelector('[data-id="2"]').checked,true);
+const guideData=JSON.parse(sourceScripts[0].replace(/^const DATA = /,'').trim().replace(/;$/,''));
+let estimatedTotal=0;const knownRewards=new Set(guideData.rewardSources.map(item=>item.id));
+for(const stage of guideData.gearGuide.stages){estimatedTotal+=stage.rows.reduce((sum,row)=>sum+row[1],0);assert.equal(estimatedTotal,stage.total)}
+assert.equal(estimatedTotal,2700);assert.equal(knownRewards.size,guideData.rewardSources.length);
+for(const milestone of guideData.route)for(const id of milestone[7])assert.ok(knownRewards.has(id),'Unknown route reward '+id);
+for(const group of ['daily','weekly'])for(const task of guideData[group])if(task[6]?.rewardTarget)assert.ok(knownRewards.has(task[6].rewardTarget));
 const corrupt=await open('{broken');assert.equal(corrupt.w.localStorage.getItem(storageKey),'{broken');assert.equal(corrupt.d.getElementById('import-data').disabled,false);
 const storage=w.localStorage;Object.defineProperty(w,'localStorage',{configurable:true,value:{getItem:storage.getItem.bind(storage),setItem(){throw Error('quota')}}});d.querySelector('[data-view="route"]').click();input=d.querySelector('[data-group="route"]');input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));assert.match(d.getElementById('status').textContent,/storage is unavailable/);assert.equal(d.getElementById('export-data').disabled,false);Object.defineProperty(w,'localStorage',{configurable:true,value:storage});d.getElementById('retry').click();assert.match(d.getElementById('status').textContent,/Saved/);
 assert.equal(requests.length,0);for(const win of windows){await win.happyDOM.abort();win.close()}console.log('Passed: local persistence, names and alt counts, per-character checklists, safe text, backup import/export, invalid imports, resets and storage failures.');

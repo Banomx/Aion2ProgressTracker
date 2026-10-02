@@ -10,7 +10,10 @@ const DATA = {
         "The reviewed Day-1 plan stops the main at level 35 first for Glory world-boss farming, then brings alts to 22 before finishing the main to 45.",
         "Keep alt energy working in 1★ and 2★ content once unlocked."
       ],
-      "Launch foundations"
+      "Launch foundations",
+      [
+        "odyle"
+      ]
     ],
     [
       "Reach 45 and complete exploration",
@@ -21,9 +24,18 @@ const DATA = {
       [
         "Do the five daily Duty quests; prioritize Pet Souls and Cube Keys.",
         "Collect feathers on the main: fill missing Altgard feathers (about 186 there, about 560 total for the Monolith), then missing Abyss feathers.",
-        "If Abyss is crowded, level alts and return during a quieter window or at night. Synchronize the Monolith to alts."
+        "If Abyss is crowded, level alts and return during a quieter window or at night. Synchronize the Monolith to alts.",
+        "The Sep-29 gear chart estimates a 1,269 iLvL foundation: level-45 gear 645, sealed-dungeon Daevanion points 360, feather amulet 65, stronghold belt 65, Abyss-feather board points 52 and two Clash Runes 82.",
+        "Bring the amulet and belt to the chart’s Legend +0 target (the reviewed video calls this Unique +0). Keep both Clash Runes at +1; further enhancement can destroy them."
       ],
-      "Launch foundations"
+      "Launch foundations",
+      [
+        "sealed",
+        "feathers",
+        "strongholds",
+        "abyss-feathers",
+        "runes"
+      ]
     ],
     [
       "Unlock Nightmare and reserve statue currency",
@@ -35,7 +47,10 @@ const DATA = {
         "Reserve 14,000 Nightmare Tokens for the “Unique: Zikel’s Apparition” statue before other purchases; it is a substantial stat upgrade.",
         "Run performance-based attempts later in the week as gear improves, while watching the ticket cap so regeneration is not wasted."
       ],
-      "Launch foundations"
+      "Launch foundations",
+      [
+        "nightmare"
+      ]
     ],
     [
       "Train accessory and weapon crafting",
@@ -48,7 +63,30 @@ const DATA = {
         "Weapon profession: Handicrafting for Ranger/Chanter; Weaponsmithing for Gladiator/Templar/Assassin/Cleric; Alchemy for Sorcerer/Spiritmaster.",
         "Start accessory crafting once your profession and materials are ready."
       ],
-      "Guaranteed gear & 1,900 IL"
+      "Guaranteed gear & 1,900 IL",
+      [
+        "crafting"
+      ]
+    ],
+    [
+      "Craft Star Dragon accessories, then weapon",
+      "Five accessories → weapon · Draupnir from 700 iLvL",
+      "Use alt Kina and crafting materials to fund the main. Craft a necklace, two earrings and two rings, then craft your Star Dragon weapon.",
+      1100,
+      3,
+      [
+        "Run 1★ and 2★ dungeons on alts. The reviewed four-alt example spreads runs across Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island.",
+        "Buy Artisan base items if affordable; otherwise craft the bases yourself. Market prices are not guaranteed.",
+        "Keep failed-quality crafts: sell them or use them for supply requests. Equip alts mainly with dungeon drops.",
+        "If you need the bridge to 1,400, use Exploration Draupnir’s guaranteed armor. The chart’s “x3” means reward progress; follow the reviewed three-cube rule rather than assuming three runs.",
+        "The chart estimates +118 iLvL from five crafted accessories, +17 from the weapon and +16 from Draupnir armor: roughly 1,420 after the exploration baseline."
+      ],
+      "Guaranteed gear & 1,900 IL",
+      [
+        "crafting",
+        "draupnir",
+        "alt-farm"
+      ]
     ],
     [
       "Claim the guaranteed Vakron armor",
@@ -58,36 +96,36 @@ const DATA = {
       2,
       [
         "Avoid spending energy on leveling-dungeon boxes.",
-        "This armor piece is worth investing in alongside your bracelets and crafted gear."
+        "This armor piece is worth investing in alongside your bracelets and crafted gear.",
+        "The chart estimates +32 iLvL from Vakron armor. Its “Vakron x3” shorthand is paired here with the reviewed method: three reward cubes across two runs.",
+        "After crafting and Vakron, the chart estimates about 1,611 with enhancements: nine Legend pieces to +11, the other bracelet and guard to +10, remaining pieces around +8. Spend on gear you will keep."
       ],
-      "Guaranteed gear & 1,900 IL"
-    ],
-    [
-      "Craft Star Dragon accessories, then weapon",
-      "Five accessories → weapon",
-      "Use alt Kina and crafting materials to fund the main. Craft a necklace, two earrings and two rings, then craft your Star Dragon weapon.",
-      1100,
-      3,
+      "Guaranteed gear & 1,900 IL",
       [
-        "Run 1★ and 2★ dungeons on alts. The reviewed four-alt example spreads runs across Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island.",
-        "Buy Artisan base items if affordable; otherwise craft the bases yourself. Market prices are not guaranteed.",
-        "Keep failed-quality crafts: sell them or use them for supply requests. Equip alts mainly with dungeon drops."
-      ],
-      "Guaranteed gear & 1,900 IL"
+        "vakron"
+      ]
     ],
     [
       "Close the gap to item level 1,900",
-      "Upgrade gear you will keep",
-      "Reach the Transcendence Stage-2 entry threshold without overspending on temporary gear or perfect early rolls.",
+      "1,600 Stage 1 → 1,900 Stage 2",
+      "Use Stage-1 Arcana, crafted-gear upgrades and intermediate stones to reach the Stage-2 threshold. Do not wait until 1,900 to fill your first Arcana slots.",
       1100,
       11,
       [
+        "At 1,600 iLvL, Transcendence Stage 1 provides starter Arcana. The chart uses two green and three grey cards for an estimated +140 iLvL; replace these later.",
         "Belt and amulet: Unique +0. Ascensions Bracelet: +11. Liberator Bracelet: +10. Two Clash Runes: +1 each.",
         "Use Intermediate Manastones and Soulstones on bracelets, Vakron armor, Star Dragon accessories and weapon; aim for at least one blue and one green stat.",
         "Useful high-end Unique/gold gear such as Vakron can go to +11. Temporary blue story gear: only up to +3 with Lesser Manastones if needed.",
-        "If still short of 1,900, consider the Exploration Draupnir guaranteed reward, further worthwhile enhancements or improved manastone rolls."
+        "If still short of 1,900, consider the Exploration Draupnir guaranteed reward, further worthwhile enhancements or improved manastone rolls.",
+        "Upgrade the crafted weapon and accessories toward Splendent White Dragon or Splendent Dark Dragon; the chart estimates +144 iLvL.",
+        "The chart calls its socket upgrades “Intermediate Magicstones” and estimates +105 iLvL. Use the site’s Manastone/Soulstone advice on worthwhile gear; exact rolls change the gain."
       ],
-      "Guaranteed gear & 1,900 IL"
+      "Guaranteed gear & 1,900 IL",
+      [
+        "stage1",
+        "stones",
+        "crafting"
+      ]
     ],
     [
       "Fill Arcana slots and push to 2,100",
@@ -96,10 +134,13 @@ const DATA = {
       1337,
       4,
       [
-        "Stage 1 can bridge the gap if Stage 2 is not yet accessible.",
-        "Stage-2 reward assumptions were not fully confirmed at recording. The next target is 2,100 IL."
+        "The Sep-29 chart uses two blue and one green Arcana card for an estimated +100 iLvL, reaching roughly 2,100 from its 2,000 example. Additional energy can target five blue cards.",
+        "Fill slots first; perfect set effects and skill rolls come later. The guide’s totals are examples, not guaranteed gains."
       ],
-      "2,100 IL & Nuakum armor"
+      "2,100 IL & Nuakum armor",
+      [
+        "stage2"
+      ]
     ],
     [
       "Bank the Exploration guaranteed reward",
@@ -110,7 +151,10 @@ const DATA = {
       [
         "Bank the selector so it can fill a missing armor slot later."
       ],
-      "2,100 IL & Nuakum armor"
+      "2,100 IL & Nuakum armor",
+      [
+        "horn-exploration"
+      ]
     ],
     [
       "Farm Nuakum armor and upgrade to Ebony",
@@ -120,9 +164,15 @@ const DATA = {
       6,
       [
         "Aim for the Nuakum armor set while your alts continue 1★/2★ farming.",
-        "Stack Kina and crafting materials. Use Transfer Crafting to upgrade the weapon to Ebony first, then upgrade accessories."
+        "Stack Kina and crafting materials. Use Transfer Crafting to upgrade the weapon to Ebony first, then upgrade accessories.",
+        "The chart estimates +332 iLvL from Tier-3 Conquest armor upgrades and +10 from enhancements. Bring Legend gear toward +11; weapon/accessories can optionally go to +15 for damage.",
+        "Reapply useful stones as armor is replaced. The chart’s final section is labeled 2,000, but its unlock note and the reviewed route use 2,100 for 3★ content; check the actual in-game gate."
       ],
-      "2,100 IL & Nuakum armor"
+      "2,100 IL & Nuakum armor",
+      [
+        "horn-conquest",
+        "crafting"
+      ]
     ],
     [
       "Use the banked selector for missing armor",
@@ -134,19 +184,28 @@ const DATA = {
         "Prioritize boots or gloves when missing: their Movement Speed or Combat Speed Soul Binds are useful early.",
         "Avoid chasing perfect Soul Binds; they increase combat power but do not raise item level."
       ],
-      "2,100 IL & Nuakum armor"
+      "2,100 IL & Nuakum armor",
+      [
+        "horn-exploration"
+      ]
     ],
     [
-      "Build endgame Arcana before Ludra",
-      "Transcendence Stage 4 · gold Arcana",
+      "Build endgame Arcana and aim for 2,700",
+      "Stage 4 · Legend Arcana · 2,700 planning target",
       "Return to Stage 4 for gold Arcana. Now target the correct set effect and class skills/passives while continuing gear crafting and Kina farming.",
       1640,
       8,
       [
         "Craft missing armor pieces and keep progressing through Transfer Crafting toward Ludra and Sanctuary.",
-        "The video does not confirm a Stage-4 entry item level; do not treat an estimated threshold as a requirement."
+        "The video does not confirm a Stage-4 entry item level; do not treat an estimated threshold as a requirement.",
+        "The chart estimates +160 iLvL from Legend/gold Arcana and +98 from Splendent Wise Dragon or Splendent Ebony Dragon weapon/accessories. Combine these with Conquest armor and enhancements for its 2,700 example.",
+        "The chart says 2,700 may open the ten-player raid if requirements stay unchanged. Treat that as an unconfirmed planning target, not a verified raid entry requirement."
       ],
-      "Endgame & long-term alts"
+      "Endgame & long-term alts",
+      [
+        "stage4",
+        "crafting"
+      ]
     ]
   ],
   "daily": [
@@ -159,7 +218,8 @@ const DATA = {
       null,
       {
         "limit": "5/day · Server-wide",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "duties"
       }
     ],
     [
@@ -167,7 +227,11 @@ const DATA = {
       "Complete affordable supply requests",
       "Use spare drops or your own crafts. If dungeon gear is requested, run that dungeon on an alt and warehouse-transfer the item to the main. Avoid costly Odyle, Raw Leather and overpriced purchases.",
       1756,
-      "Daily"
+      "Daily",
+      null,
+      {
+        "rewardTarget": "supply"
+      }
     ],
     [
       "festival",
@@ -178,7 +242,8 @@ const DATA = {
       "You don’t need to use all entries in one day—just avoid reaching the stock cap.",
       {
         "limit": "Lv13 · +2 keys/day · Cap14 · Server-wide",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "shugo"
       }
     ],
     [
@@ -186,7 +251,11 @@ const DATA = {
       "Attend time-sensitive reward events",
       "Prioritize sieges, Abyss world bosses and battlegrounds for medals and long-term rewards. Use Abyss corridors when your faction controls the required artifacts; skip pointless open-world PvP grinding.",
       2210,
-      "Scheduled"
+      "Scheduled",
+      null,
+      {
+        "rewardTarget": "ap"
+      }
     ],
     [
       "rifts",
@@ -199,7 +268,8 @@ const DATA = {
         "limit": "Scheduled · See the live Rift timer",
         "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
         "rewards": "PvP, Rift quests and sealed dungeons offer Abyss Points.",
-        "supplement": "https://talentbuilds.com/aion2/checklist"
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "ap"
       }
     ],
     [
@@ -211,7 +281,8 @@ const DATA = {
       null,
       {
         "limit": "Odyle: Lv22 · +120/day · Cap840 · Per character",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "odyle"
       }
     ],
     [
@@ -225,7 +296,8 @@ const DATA = {
         "limit": "Per character",
         "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
         "rewards": "Conquest rewards equipment; Transcendence rewards Arcana, Theostones and Amplify Stone fragments.",
-        "supplement": "https://talentbuilds.com/aion2/checklist"
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "alt-farm"
       }
     ],
     [
@@ -233,14 +305,22 @@ const DATA = {
       "Queue crafting before sleep or AFK",
       "Use inexpensive recipes to train Handicrafting first, then your weapon profession. Aim for Professional 20 and roughly 25–30 using Balaur materials.",
       906,
-      "Routine"
+      "Routine",
+      null,
+      {
+        "rewardTarget": "crafting"
+      }
     ],
     [
       "farm",
       "Later: pets, Genus Insight and Kina",
       "Defer dedicated pet/Insight farming until the early gear route is established. When you have spare time, combine it with the one-million daily open-world Kina cap. Gold drops may be worth selling early; keep useful pieces for Soul Bind/Transfer later.",
       1961,
-      "Routine"
+      "Routine",
+      null,
+      {
+        "rewardTarget": "kina"
+      }
     ]
   ],
   "weekly": [
@@ -253,7 +333,8 @@ const DATA = {
       null,
       {
         "limit": "12 PvE + 20 PvP scrolls/week · Server-wide",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "supply"
       }
     ],
     [
@@ -265,7 +346,8 @@ const DATA = {
       null,
       {
         "limit": "20 main + 4 per alt/week",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "energy"
       }
     ],
     [
@@ -277,7 +359,8 @@ const DATA = {
       null,
       {
         "limit": "20 main + 4 per alt/week · Subscription only",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "energy"
       }
     ],
     [
@@ -285,7 +368,11 @@ const DATA = {
       "Complete efficient weekly supply requests",
       "Check weekly requests alongside daily ones. Farm requested dungeon gear on alts, transfer to the main and avoid expensive raw-material hand-ins.",
       1756,
-      "Throughout week"
+      "Throughout week",
+      null,
+      {
+        "rewardTarget": "supply"
+      }
     ],
     [
       "daily-dungeon",
@@ -296,7 +383,8 @@ const DATA = {
       null,
       {
         "limit": "14 entries/week · Server-wide",
-        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide"
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "daily-dungeon"
       }
     ],
     [
@@ -310,7 +398,8 @@ const DATA = {
         "limit": "Lv45 · +2 tickets/day · Cap14 · Per character",
         "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
         "rewards": "Nightmare also offers Amplify Stones, Soul Codex rewards, wings and statues.",
-        "supplement": "https://talentbuilds.com/aion2/checklist"
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "nightmare"
       }
     ],
     [
@@ -324,7 +413,8 @@ const DATA = {
         "limit": "3 runs/week · Per character",
         "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
         "rewards": "Solo trial rewards include Selentium, Daevanion Crystal fragments and Manastones/Soulstones.",
-        "supplement": "https://talentbuilds.com/aion2/checklist"
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "ascension"
       }
     ],
     [
@@ -332,7 +422,11 @@ const DATA = {
       "Complete available medal / bonus-AP events",
       "Participate in scheduled sieges, Abyss world bosses and battlefields for long-term rewards. Battlefield: 3 wins per character/week. Corridors: main and alts before the next siege.",
       2230,
-      "Scheduled"
+      "Scheduled",
+      null,
+      {
+        "rewardTarget": "ap"
+      }
     ]
   ],
   "qa": [
@@ -461,5 +555,382 @@ const DATA = {
       "Long-term alt goals",
       "Keep alts mainly in dungeon drops and optionally add affordable crafted accessories later. Eventually extend Shugo Festival participation to alts for Stigma Shards, subject to shared key availability. Aim for item level 3,000 to enter Middle Reshanta for Abyss Corridors."
     ]
-  ]
+  ],
+  "rewardSources": [
+    {
+      "id": "sealed",
+      "activity": "Sealed dungeons",
+      "where": "World exploration: sealed dungeons on the main and alts",
+      "rewards": "Daevanion points for the board; Kina, AP and Enhancement Stones in the reviewed exploration notes",
+      "plan": "Chart: about 360 points for the Season-1 foundation. Enemy-side Rift dungeons are a lower-priority option.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "feathers",
+      "activity": "Feathers and the Monolith",
+      "where": "Collect missing Altgard/world feathers; synchronize the Monolith to alts",
+      "rewards": "Amulet progression; Monolith-related Cube Keys",
+      "plan": "Chart: amulet to Legend +0, estimated +65 iLvL. Reviewed collection targets: about 186 Altgard / 560 total feathers.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "strongholds",
+      "activity": "Strongholds",
+      "where": "World exploration: complete strongholds",
+      "rewards": "Belt progression",
+      "plan": "Chart: belt to Legend +0, estimated +65 iLvL. Reviewed video uses the name Unique +0.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "abyss-feathers",
+      "activity": "Abyss feathers",
+      "where": "Collect feathers in the Abyss; return during a quieter window if needed",
+      "rewards": "Daevanion board points",
+      "plan": "Chart: 52 board points, listed as an estimated +52 iLvL contribution.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026"
+    },
+    {
+      "id": "runes",
+      "activity": "Clash Runes",
+      "where": "Upgrade two owned Clash Runes; acquisition location is not given in the supplied sources",
+      "rewards": "Rune stats / item-level contribution",
+      "plan": "Chart: two runes at +1, estimated +82 iLvL. Further upgrading can destroy a rune.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026"
+    },
+    {
+      "id": "crafting",
+      "activity": "Crafted accessories and weapon",
+      "where": "Handicrafting for accessories; weapon profession depends on class. Use main crafting with alt materials/Kina. Ranger/Chanter: Handicrafting; Gladiator/Templar/Assassin/Cleric: Weaponsmithing; Sorcerer/Spiritmaster: Alchemy.",
+      "rewards": "Necklace, two earrings, two rings and weapon; later dragon upgrades",
+      "plan": "Initial +118 / +17 estimates; White/Dark Dragon tier +144; Wise/Ebony Dragon tier +98. These are separate stages, not rewards from one craft.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "draupnir",
+      "activity": "Exploration · Draupnir",
+      "where": "Expedition → Exploration → Draupnir · chart gate 700 iLvL",
+      "rewards": "Guaranteed Legend armor via reward-cube progress",
+      "plan": "Chart estimate +16 iLvL; use it to bridge to Vakron. Keep the reviewed three-cube reward plan; do not interpret x3 as three runs.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "vakron",
+      "activity": "Exploration · Vakron Sky Island",
+      "where": "Expedition → Exploration → Vakron Sky Island · 1,400 iLvL",
+      "rewards": "Guaranteed chest armor",
+      "plan": "Open exactly three reward cubes across two runs for 120 Odyle. Chart estimate +32 iLvL.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "stage1",
+      "activity": "Transcendence · Stage 1",
+      "where": "Transcendence Stage 1 · chart gate 1,600 iLvL",
+      "rewards": "Starter Arcana; Transcendence also supplies Theostones and Amplify Stone fragments",
+      "plan": "Chart example: two green + three grey Arcana, estimated +140 iLvL. A bridge toward Stage 2.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "stones",
+      "activity": "Intermediate stones and enhancements",
+      "where": "Socket/enhance gear worth keeping. Ascension Trials supply Manastones/Soulstones; a specific Magicstone farm is not given by the chart.",
+      "rewards": "Item-level upgrades from stones and enhancements; exact rolls vary",
+      "plan": "Chart stone estimate +105. Keep temporary story-gear investment low. “Magicstones” is the chart’s wording; the existing guide uses Manastones/Soulstones.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "stage2",
+      "activity": "Transcendence · Stage 2",
+      "where": "Transcendence Stage 2 · 1,900 iLvL",
+      "rewards": "Blue/green Arcana upgrades",
+      "plan": "Chart example: two blue + one green for estimated +100 iLvL; optionally spend more energy toward five blue cards.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026"
+    },
+    {
+      "id": "horn-exploration",
+      "activity": "Exploration · Ferocious Horn Den",
+      "where": "Expedition → Exploration → Ferocious Horn Den · reviewed gate 2,100 iLvL",
+      "rewards": "Guaranteed armor selector",
+      "plan": "Two runs, three reward cubes, 120 Odyle. Save the selector until after Conquest drops so it fills a missing armor slot.",
+      "source": "Reviewed video / text guide"
+    },
+    {
+      "id": "horn-conquest",
+      "activity": "Conquest · Ferocious Horn Den",
+      "where": "Expedition → Conquest → Ferocious Horn Den · plan for 2,100 iLvL, verify the in-game gate",
+      "rewards": "Nuakum armor, equipment drops and Conquest pity tickets",
+      "plan": "Claim both boxes. Fourteen runs give one pity ticket; 28 give two for Nuakum Guard. Chart estimates +332 from armor. Its 2,000 label conflicts with its 2,100 unlock note.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "stage4",
+      "activity": "Transcendence · Stage 4",
+      "where": "Transcendence Stage 4 · entry iLvL not confirmed by the supplied guides",
+      "rewards": "Legend/gold Arcana, with endgame set effects and class skills/passives",
+      "plan": "Chart estimate +160 iLvL. Start optimizing useful stats after filling your early slots.",
+      "source": "Uploaded Season 1 gear chart · Sep 29, 2026 + Reviewed video / text guide"
+    },
+    {
+      "id": "nightmare",
+      "activity": "Nightmare and its shop",
+      "where": "Unlock Nightmare at level 45; spend earned tokens in the Nightmare shop",
+      "rewards": "Nightmare Tokens; Amplify Stones, Soul Codex rewards, wings and statues",
+      "plan": "Reserve 14,000 tokens for Unique: Zikel’s Apparition before other purchases. Tickets regenerate; gear up before performance attempts without reaching the cap.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "shugo",
+      "activity": "Shugo Festival / Invasion",
+      "where": "Festival event and Shugo Festival shop; use the live timer",
+      "rewards": "Odyle, Refining Stones; shop choices include Daevanion Crystals and Stigma Shards",
+      "plan": "Daevanion Crystals first, Stigma Shards next. Early entries go to the max-level main; no need to use every entry in one day.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "duties",
+      "activity": "Level-45 Duties",
+      "where": "Duty quests unlocked at level 45",
+      "rewards": "Pet Souls, Cube Keys and AP",
+      "plan": "Five daily quests share a server-wide pool. Prioritize Pet Souls and Cube Keys.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "ascension",
+      "activity": "Ascension Trials",
+      "where": "Solo Ascension Trials on the main and alts",
+      "rewards": "Selentium, Daevanion Crystal fragments, Manastones/Soulstones and pets",
+      "plan": "Three weekly runs per character. Improve gear first to push higher rewards.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "ap",
+      "activity": "Rifts and Abyss events",
+      "where": "Spacetime Rift quests; scheduled sieges, Abyss bosses and battlefields; corridors after faction artifact control",
+      "rewards": "Abyss Points and medals from the appropriate activities",
+      "plan": "Abyss shop: prioritize Stigma Shards (reviewed quote: 10,000 AP each). Check event timers; defer pointless open-world PvP grinding.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "alt-farm",
+      "activity": "Alt dungeon farming",
+      "where": "Useful 1★/2★ dungeons on alts: Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island",
+      "rewards": "Kina, crafting materials and dungeon equipment",
+      "plan": "Transfer eligible resources to the main; use drops to gear alts. Check transfer rules before committing bound resources.",
+      "source": "Reviewed video / text guide"
+    },
+    {
+      "id": "energy",
+      "activity": "Weekly energy sources",
+      "where": "Substance Morphing; subscription shop if eligible",
+      "rewards": "Additional energy; subscription shop also lists Daily Dungeon tickets and Soul Crystals",
+      "plan": "Check weekly limits in the checklist. Daily Dungeon entries are server-wide, so extra alts do not create extra entries.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "season",
+      "activity": "Season shop",
+      "where": "Season-token purchases on the main and alts",
+      "rewards": "Crafting ingredients; Talisra Wings",
+      "plan": "Save the main’s season tokens for Talisra Wings. Buy needed transferable ingredients on alts; verify bound-item transfer rules first.",
+      "source": "Reviewed video / text guide"
+    },
+    {
+      "id": "daily-dungeon",
+      "activity": "Daily Dungeon",
+      "where": "Daily Dungeon menu; 14 weekly entries shared across the server",
+      "rewards": "Performance-based rewards; the supplied notes do not list the exact item pool",
+      "plan": "Improve gear first and use weekly entries later. Extra alts do not add entries. Subscription-shop ticket purchases are separate.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "supply",
+      "activity": "Supply requests and contracts",
+      "where": "Daily/weekly supply deliveries; level-45 command merchant for weekly contract scrolls",
+      "rewards": "AP from deliveries and weekly contracts; other request payouts depend on the hand-in",
+      "plan": "Use spare drops or failed-quality crafts. Farm requested dungeon equipment on alts, then transfer eligible items. Avoid expensive raw-material hand-ins.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "pets",
+      "activity": "Pets, Monoliths and Genus Insight",
+      "where": "Ascension Trials on multiple characters; Cube Keys from completed Monoliths",
+      "rewards": "Pets; Rainbow Crystals for Genus Insight",
+      "plan": "The reviewed two-character Monolith example supplies crystals toward each Insight level 10. Insight improves combat power, not iLvL; defer dedicated farming early.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "kina",
+      "activity": "Open-world Kina farming",
+      "where": "Open-world drops; combine later pet/Insight farming with Kina farming",
+      "rewards": "Kina; useful gold drops may sell or serve later Soul Bind/Transfer plans",
+      "plan": "Reviewed daily open-world Kina cap: one million. Defer dedicated farming until the main gear route is established.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "merchant",
+      "activity": "Black Cloud Merchant",
+      "where": "Black Cloud Merchant shop",
+      "rewards": "Hard-to-obtain pets when available; optional cosmetics",
+      "plan": "Check for useful pets. Skins are an optional purchase, not a progression requirement.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "pass",
+      "activity": "Daeva / Odyle Pass",
+      "where": "Pass offerings, if available to your account",
+      "rewards": "Additional Odyle / energy opportunities",
+      "plan": "Use eligible extra alt energy for materials and crafting opportunities; check the current offer before buying.",
+      "source": "Existing checklist guides / reviewed video"
+    },
+    {
+      "id": "odyle",
+      "activity": "Expedition unlock and Odyle",
+      "where": "Reach level 22 and complete the Expedition unlock mission on every character you use",
+      "rewards": "Odyle regeneration for Expedition rewards",
+      "plan": "Existing checklist: +120/day, cap 840 per character; reward cubes cost 40. Unlock the menu early; a Krao Cave clear is not required. Spend on useful main upgrades and alt resources.",
+      "source": "Existing Skycoach checklist / reviewed video"
+    }
+  ],
+  "gearGuide": {
+    "title": "Season 1 Aion 2 Gear Progression guide to 2,700 IL",
+    "updated": "Sep 29, 2026",
+    "stages": [
+      {
+        "title": "Build the level-45 foundation",
+        "gate": "Level 45 + exploration",
+        "total": 1269,
+        "rows": [
+          [
+            "Level-45 leveling gear",
+            645,
+            "Baseline equipment from leveling and side content"
+          ],
+          [
+            "Sealed dungeons",
+            360,
+            "About 360 Daevanion points in Season 1"
+          ],
+          [
+            "Feathers → amulet",
+            65,
+            "Legend +0 target"
+          ],
+          [
+            "Strongholds → belt",
+            65,
+            "Legend +0 target"
+          ],
+          [
+            "Abyss feathers",
+            52,
+            "52 Daevanion board points"
+          ],
+          [
+            "Two Clash Runes",
+            82,
+            "Only +1 each; further upgrades risk destruction"
+          ]
+        ]
+      },
+      {
+        "title": "Craft and bridge to Vakron",
+        "gate": "Draupnir: 700 iLvL",
+        "total": 1420,
+        "rows": [
+          [
+            "Craft accessories",
+            118,
+            "One necklace, two earrings, two rings; alt materials"
+          ],
+          [
+            "Craft weapon",
+            17,
+            "Use alt materials; eligible alt drops can replace weak armor"
+          ],
+          [
+            "Exploration · Draupnir",
+            16,
+            "Guaranteed Legend armor; chart x3 / reviewed three-cube plan"
+          ]
+        ]
+      },
+      {
+        "title": "Vakron and lasting enhancements",
+        "gate": "Vakron: 1,400 iLvL",
+        "total": 1611,
+        "rows": [
+          [
+            "Exploration · Vakron",
+            32,
+            "Guaranteed chest armor; three cubes across two runs"
+          ],
+          [
+            "Enhance useful gear",
+            159,
+            "Nine Legend pieces +11; other bracelet/guard +10; rest about +8"
+          ]
+        ]
+      },
+      {
+        "title": "Starter Arcana and crafted upgrades",
+        "gate": "Stage 1: 1,600 iLvL",
+        "total": 2000,
+        "rows": [
+          [
+            "Transcendence · Stage 1",
+            140,
+            "Two green and three grey Arcana cards"
+          ],
+          [
+            "Upgrade crafted gear",
+            144,
+            "Splendent White Dragon or Splendent Dark Dragon weapon/accessories"
+          ],
+          [
+            "Intermediate Magicstones",
+            105,
+            "Chart wording; socket as needed to reach 1,900, then again after 2,100"
+          ]
+        ]
+      },
+      {
+        "title": "Stage-2 Arcana to reach 3★ content",
+        "gate": "Stage 2: 1,900 iLvL",
+        "total": 2100,
+        "rows": [
+          [
+            "Transcendence · Stage 2",
+            100,
+            "Two blue + one green Arcana; optionally work toward five blue"
+          ]
+        ]
+      },
+      {
+        "title": "Conquest armor and endgame Arcana",
+        "gate": "3★ planning target: 2,100 iLvL",
+        "total": 2700,
+        "rows": [
+          [
+            "Tier-3 Conquest · Ferocious Horn Den",
+            332,
+            "Armor upgrades; add useful stones as gear changes"
+          ],
+          [
+            "Enhance",
+            10,
+            "Legend gear around +11; optional weapon/accessories +15 for damage"
+          ],
+          [
+            "Transcendence · Stage 4",
+            160,
+            "Legend/gold Arcana; refine stats and enhancements"
+          ],
+          [
+            "Upgrade crafted gear",
+            98,
+            "Splendent Wise Dragon or Splendent Ebony Dragon weapon/accessories"
+          ]
+        ]
+      }
+    ]
+  }
 };
