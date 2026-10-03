@@ -1,4 +1,4 @@
-const TIMER_EVENTS=[['shugo','Shugo','✦'],['rift','Rift','ϟ'],['kaira','Watcher Kaira','☠'],['daily','Daily','◷']];
+const TIMER_EVENTS=[['gartua','Gartua','☠'],['shugo','Shugo','✦'],['rift','Rift','ϟ'],['kaira','Watcher Kaira','☠'],['daily','Daily','◷']];
 const rewardsById=new Map(DATA.rewardSources.map(reward=>[reward.id,reward]));
 function routeRewards(ids){
   return '<dl class="route-rewards">'+ids.map(id=>{
@@ -109,7 +109,7 @@ function parseTimerTimes(text){
   });
   return [...new Set(times)].sort((a,b)=>a-b);
 }
-function defaultTimerSchedule(id){return id==='daily'?{times:[DATA.dailyReset.utcMinutes]}:QUESTLOG_SCHEDULE.events[id]}
+function defaultTimerSchedule(id){return id==='daily'?{times:[DATA.dailyReset.utcMinutes]}:id==='gartua'?DATA.fieldBosses.gartua:QUESTLOG_SCHEDULE.events[id]}
 function germanyDailyResetTime(now=new Date()){const at=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),0,DATA.dailyReset.utcMinutes));return at.toLocaleTimeString('en-GB',{timeZone:DATA.dailyReset.germanyTimeZone,hour:'2-digit',minute:'2-digit',timeZoneName:'short',hourCycle:'h23'})}
 function timerTime(minutes){return String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0')}
 function nextTimerTimes(times,now=new Date()){
@@ -135,9 +135,9 @@ function updateTimers(now=new Date()){
     const current=custom?null:activeTimerWindow(schedule,now);
     if(!count)continue;
     count.textContent=current?'ends in '+timerCountdown(current.end,now):(next.length?'in '+timerCountdown(next[0],now):'· Set time');
-    el('timer-schedule-'+id).textContent=(custom?'Custom · ':id==='daily'?'In-game daily reset · ':'QuestLog Global · ')+'UTC: '+times.map(timerTime).join(', ');
+    el('timer-schedule-'+id).textContent=(custom?'Custom · ':id==='daily'?'In-game daily reset · ':id==='gartua'?'Reported Gartua spawn · ':'QuestLog Global · ')+'UTC: '+times.map(timerTime).join(', ');
     el('timer-next-'+id).innerHTML=next.map(at=>'<li>'+escapeHTML(new Date(at).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>').join('')+(id==='daily'?'<li>Weekly (QuestLog): '+escapeHTML(nextWeeklyReset(now).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>':'');
-    let info=el('timer-info-'+id);if(!info){info=document.createElement('p');info.id='timer-info-'+id;el('timer-next-'+id).after(info)}info.textContent=(id==='rift'?'Portal opens for 10 minutes; event lasts one hour. ':'')+(custom?'Manual override. ':id==='daily'?'Confirmed in game on '+DATA.dailyReset.confirmedAt+'. Germany: 09:00 CEST / 08:00 CET. ':'Checked '+new Date(QUESTLOG_SCHEDULE.checkedAt).toLocaleString()+'. '+(now.getTime()-Date.parse(QUESTLOG_SCHEDULE.checkedAt)>7200000?'Source check is overdue. ':''));
+    let info=el('timer-info-'+id);if(!info){info=document.createElement('p');info.id='timer-info-'+id;el('timer-next-'+id).after(info)}info.textContent=(id==='rift'?'Portal opens for 10 minutes; event lasts one hour. ':'')+(custom?'Manual override. ':id==='daily'?'Confirmed in game on '+DATA.dailyReset.confirmedAt+'. Germany: 09:00 CEST / 08:00 CET. ':id==='gartua'?'Field boss · every 12 hours. Reported around 13:00 Germany time on '+DATA.fieldBosses.gartua.reportedAt+'. Schedule: 11:00 / 23:00 UTC (13:00 / 01:00 CEST; 12:00 / 00:00 CET). Edit if your server differs. ':'Checked '+new Date(QUESTLOG_SCHEDULE.checkedAt).toLocaleString()+'. '+(now.getTime()-Date.parse(QUESTLOG_SCHEDULE.checkedAt)>7200000?'Source check is overdue. ':''));
   }
 }
 function activeTimerWindow(schedule,now){
@@ -154,7 +154,7 @@ function timerFieldFeedback(id,normalize=false){
     input.removeAttribute('aria-invalid');hint.classList.remove('field-error');
     const today=new Date();
     const local=times.slice(0,3).map(minute=>new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate(),0,minute)));
-    hint.textContent=(custom.length?'Custom: ':id==='daily'?'In-game daily reset: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
+    hint.textContent=(custom.length?'Custom: ':id==='daily'?'In-game daily reset: ':id==='gartua'?'Reported Gartua default: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
     return true;
   }catch(error){input.setAttribute('aria-invalid','true');hint.classList.add('field-error');hint.textContent=error.message;return false}
 }

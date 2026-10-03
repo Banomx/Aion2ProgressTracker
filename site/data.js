@@ -986,5 +986,16 @@ const DATA = {
     "germanyTimeZone": "Europe/Berlin",
     "confirmedAt": "2026-10-03",
     "source": "In-game screenshot and confirmed Germany capture time"
+  },
+  "fieldBosses": {
+    "gartua": {
+      "times": [
+        660,
+        1380
+      ],
+      "intervalHours": 12,
+      "reportedAt": "2026-10-03",
+      "source": "User-reported spawn around 13:00 CEST, repeating every 12 hours"
+    }
   }
 };

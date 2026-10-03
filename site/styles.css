@@ -42,3 +42,6 @@ html{scroll-padding-top:calc(var(--header-height,90px) + 16px)}header{position:s
   .task>.task-links{flex-wrap:wrap;gap:8px 16px;align-items:start}.step-foot>.time{white-space:normal}.gear-total small{white-space:normal;max-width:110px}
   #timer-panels{grid-template-columns:minmax(0,1fr)}
 }
+
+/* Highlight the priority field-boss countdown in the existing responsive bar. */
+.timer-gartua summary{color:var(--gold);font-weight:650}.timer-gartua .timer-icon{color:#ff8888}

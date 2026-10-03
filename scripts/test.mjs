@@ -46,6 +46,14 @@ deploymentReload.d.getElementById('check-duties').checked=true;deploymentReload.
 assert.deepEqual(JSON.parse(deploymentReload.w.localStorage.getItem(storageKey)),{...deploymentState,timers:{},checks:{...deploymentState.checks,'daily:main:duties':true}});
 const timerBrowser=await open(deploymentState);const td=timerBrowser.d,tw=timerBrowser.w;
 assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('daily').times),[420]);
+assert.equal(td.querySelector('#spawn-timers .spawn-timer').classList.contains('timer-gartua'),true);
+assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('gartua').times),[660,1380]);
+assert.deepEqual(Array.from(tw.timerTest.nextTimerTimes([660,1380],new Date('2026-10-03T11:01Z'))),[Date.parse('2026-10-03T23:00Z'),Date.parse('2026-10-04T11:00Z'),Date.parse('2026-10-04T23:00Z')]);
+const gartuaBrowser=await open(deploymentState),gbd=gartuaBrowser.d,gbw=gartuaBrowser.w;
+gbd.getElementById('configure-timers').click();gbd.getElementById('schedule-gartua').value='12,0';gbd.getElementById('timers-form').dispatchEvent(new gbw.Event('submit',{bubbles:true,cancelable:true}));
+const gartuaSaved=JSON.parse(gbw.localStorage.getItem(storageKey));assert.deepEqual(gartuaSaved.timers,{gartua:[0,720]});assert.deepEqual(gartuaSaved.checks,deploymentState.checks);assert.deepEqual(gartuaSaved.settings,deploymentState.settings);
+const gartuaReload=await open(gartuaSaved);assert.match(gartuaReload.d.getElementById('timer-schedule-gartua').textContent,/Custom.*00:00, 12:00/);
+
 assert.match(td.getElementById('timer-schedule-daily').textContent,/In-game daily reset.*07:00/);
 assert.equal(tw.timerTest.germanyDailyResetTime(new Date('2026-07-01T00:00Z')),'09:00 CEST');
 assert.equal(tw.timerTest.germanyDailyResetTime(new Date('2026-12-01T00:00Z')),'08:00 CET');
