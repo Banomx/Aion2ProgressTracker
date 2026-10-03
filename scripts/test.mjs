@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 const origin='https://tracker.example',storageKey='aion2-progress-tracker-v2';
 let html=await readFile(new URL('../site/index.html',import.meta.url),'utf8');
 const sourceScripts=await Promise.all(['data.js','schedules.js','app.js'].map(name=>readFile(new URL('../site/'+name,import.meta.url),'utf8')));
-html=html.replace('<script src="./data.js" defer></script><script src="./schedules.js" defer></script><script src="./app.js" defer></script>',()=>'<script>'+sourceScripts.join('\n')+'\nwindow.timerTest={nextTimerTimes,timerCountdown,activeTimerWindow,nextWeeklyReset,parseTimerTimes};'+'</script>').replace('<link rel="stylesheet" href="./styles.css">','');
+html=html.replace('<script src="./data.js" defer></script><script src="./schedules.js" defer></script><script src="./app.js" defer></script>',()=>'<script>'+sourceScripts.join('\n')+'\nwindow.timerTest={nextTimerTimes,timerCountdown,activeTimerWindow,nextWeeklyReset,parseTimerTimes,defaultTimerSchedule,germanyDailyResetTime};'+'</script>').replace('<link rel="stylesheet" href="./styles.css">','');
 const pause=()=>new Promise(r=>setTimeout(r,40));const windows=[];
 async function open(saved){const w=new Window({url:origin,settings:{enableJavaScriptEvaluation:true,suppressInsecureJavaScriptEnvironmentWarning:true}});windows.push(w);const requests=[];w.fetch=async(...args)=>{requests.push(args);throw Error('Static tracker must not use a backend')};if(saved!==undefined)w.localStorage.setItem(storageKey,typeof saved==='string'?saved:JSON.stringify(saved));w.document.write(html);await pause();return{w,d:w.document,requests}}
 const {w,d,requests}=await open();assert.equal(d.getElementById('daily-count').textContent,'0 / 9');assert.equal(d.getElementById('weekly-count').textContent,'0 / 8');assert.equal(d.querySelectorAll('.step').length,12);assert.equal(d.querySelectorAll('#character option').length,4);assert.match(d.getElementById('status').textContent,/Saved in this browser/);
@@ -45,6 +45,15 @@ deploymentReload.d.querySelector('[data-view="daily"]').click();assert.equal(dep
 deploymentReload.d.getElementById('check-duties').checked=true;deploymentReload.d.getElementById('check-duties').dispatchEvent(new deploymentReload.w.Event('change',{bubbles:true}));
 assert.deepEqual(JSON.parse(deploymentReload.w.localStorage.getItem(storageKey)),{...deploymentState,timers:{},checks:{...deploymentState.checks,'daily:main:duties':true}});
 const timerBrowser=await open(deploymentState);const td=timerBrowser.d,tw=timerBrowser.w;
+assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('daily').times),[420]);
+assert.match(td.getElementById('timer-schedule-daily').textContent,/In-game daily reset.*07:00/);
+assert.equal(tw.timerTest.germanyDailyResetTime(new Date('2026-07-01T00:00Z')),'09:00 CEST');
+assert.equal(tw.timerTest.germanyDailyResetTime(new Date('2026-12-01T00:00Z')),'08:00 CET');
+assert.deepEqual(Array.from(tw.timerTest.nextTimerTimes([420],new Date('2026-10-03T07:09Z'))),[Date.parse('2026-10-04T07:00Z'),Date.parse('2026-10-05T07:00Z'),Date.parse('2026-10-06T07:00Z')]);
+const customDaily=await open({...deploymentState,timers:{daily:[90]}});
+assert.match(customDaily.d.getElementById('timer-schedule-daily').textContent,/Custom.*01:30/);
+assert.equal(customDaily.d.getElementById('reset-hour').value,'7');
+
 td.getElementById('configure-timers').click();td.getElementById('schedule-shugo').value='23:30, 00:30, 23:30';td.getElementById('schedule-rift').value='25:00';td.getElementById('timers-form').dispatchEvent(new tw.Event('submit',{bubbles:true,cancelable:true}));assert.match(td.getElementById('timer-error').textContent,/Rift/);assert.equal(td.getElementById('schedule-rift').getAttribute('aria-invalid'),'true');assert.match(td.getElementById('schedule-hint-rift').textContent,/25:00/);assert.deepEqual(JSON.parse(tw.localStorage.getItem(storageKey)),deploymentState);
 td.getElementById('schedule-rift').value='03:00, 06:00';td.getElementById('timers-form').dispatchEvent(new tw.Event('submit',{bubbles:true,cancelable:true}));const timedState=JSON.parse(tw.localStorage.getItem(storageKey));assert.deepEqual(timedState.timers,{shugo:[30,1410],rift:[180,360]});assert.deepEqual(timedState.checks,deploymentState.checks);assert.deepEqual(timedState.settings,deploymentState.settings);
 assert.deepEqual(Array.from(tw.timerTest.parseTimerTimes('1:00,2:00,3:00')),[60,120,180]);assert.deepEqual(Array.from(tw.timerTest.parseTimerTimes(' 3;1:5,02:30,1:05,\n')),[65,150,180]);assert.deepEqual(Array.from(tw.timerTest.parseTimerTimes('0,23')),[0,1380]);for(const value of ['24:00','1:60','-1','12pm','1::00'])assert.throws(()=>tw.timerTest.parseTimerTimes(value));

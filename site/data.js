@@ -980,5 +980,11 @@ const DATA = {
       "Magicstones is the chart’s wording; older notes use Manastones/Soulstones. A specific Magicstone farm is not given by the chart.",
       "Stage-4 entry iLvL is unspecified. The chart’s ten-player raid target at 2,700 is conditional."
     ]
+  },
+  "dailyReset": {
+    "utcMinutes": 420,
+    "germanyTimeZone": "Europe/Berlin",
+    "confirmedAt": "2026-10-03",
+    "source": "In-game screenshot and confirmed Germany capture time"
   }
 };

@@ -109,6 +109,8 @@ function parseTimerTimes(text){
   });
   return [...new Set(times)].sort((a,b)=>a-b);
 }
+function defaultTimerSchedule(id){return id==='daily'?{times:[DATA.dailyReset.utcMinutes]}:QUESTLOG_SCHEDULE.events[id]}
+function germanyDailyResetTime(now=new Date()){const at=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),0,DATA.dailyReset.utcMinutes));return at.toLocaleTimeString('en-GB',{timeZone:DATA.dailyReset.germanyTimeZone,hour:'2-digit',minute:'2-digit',timeZoneName:'short',hourCycle:'h23'})}
 function timerTime(minutes){return String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0')}
 function nextTimerTimes(times,now=new Date()){
   if(!times.length)return [];
@@ -127,14 +129,15 @@ function renderTimers(){
   updateTimers();
 }
 function updateTimers(now=new Date()){
+  el('daily-reset-reference').textContent='Daily reset: '+timerTime(DATA.dailyReset.utcMinutes)+' UTC · '+germanyDailyResetTime(now)+' in Germany. Automatic checklist resets use your configured UTC hour below.';
   for(const [id] of TIMER_EVENTS){
-    const custom=Object.hasOwn(state.timers,id),schedule=QUESTLOG_SCHEDULE.events[id],times=custom?state.timers[id]:schedule.times,next=nextTimerTimes(times,now),count=el('timer-count-'+id);
+    const custom=Object.hasOwn(state.timers,id),schedule=defaultTimerSchedule(id),times=custom?state.timers[id]:schedule.times,next=nextTimerTimes(times,now),count=el('timer-count-'+id);
     const current=custom?null:activeTimerWindow(schedule,now);
     if(!count)continue;
     count.textContent=current?'ends in '+timerCountdown(current.end,now):(next.length?'in '+timerCountdown(next[0],now):'· Set time');
-    el('timer-schedule-'+id).textContent=(custom?'Custom · ':'QuestLog Global · ')+'UTC: '+times.map(timerTime).join(', ');
-    el('timer-next-'+id).innerHTML=next.map(at=>'<li>'+escapeHTML(new Date(at).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>').join('')+(id==='daily'?'<li>Weekly: '+escapeHTML(nextWeeklyReset(now).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>':'');
-    let info=el('timer-info-'+id);if(!info){info=document.createElement('p');info.id='timer-info-'+id;el('timer-next-'+id).after(info)}info.textContent=(id==='rift'?'Portal opens for 10 minutes; event lasts one hour. ':'')+(custom?'Manual override. ':'Checked '+new Date(QUESTLOG_SCHEDULE.checkedAt).toLocaleString()+'. ')+(Date.now()-Date.parse(QUESTLOG_SCHEDULE.checkedAt)>7200000?'Source check is overdue. ':'');
+    el('timer-schedule-'+id).textContent=(custom?'Custom · ':id==='daily'?'In-game daily reset · ':'QuestLog Global · ')+'UTC: '+times.map(timerTime).join(', ');
+    el('timer-next-'+id).innerHTML=next.map(at=>'<li>'+escapeHTML(new Date(at).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>').join('')+(id==='daily'?'<li>Weekly (QuestLog): '+escapeHTML(nextWeeklyReset(now).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>':'');
+    let info=el('timer-info-'+id);if(!info){info=document.createElement('p');info.id='timer-info-'+id;el('timer-next-'+id).after(info)}info.textContent=(id==='rift'?'Portal opens for 10 minutes; event lasts one hour. ':'')+(custom?'Manual override. ':id==='daily'?'Confirmed in game on '+DATA.dailyReset.confirmedAt+'. Germany: 09:00 CEST / 08:00 CET. ':'Checked '+new Date(QUESTLOG_SCHEDULE.checkedAt).toLocaleString()+'. '+(now.getTime()-Date.parse(QUESTLOG_SCHEDULE.checkedAt)>7200000?'Source check is overdue. ':''));
   }
 }
 function activeTimerWindow(schedule,now){
@@ -146,12 +149,12 @@ function nextWeeklyReset(now){const schedule=QUESTLOG_SCHEDULE.events.weekly,mid
 function timerFieldFeedback(id,normalize=false){
   const input=el('schedule-'+id),hint=el('schedule-hint-'+id);
   try{
-    const custom=parseTimerTimes(input.value),times=custom.length?custom:QUESTLOG_SCHEDULE.events[id].times;
+    const custom=parseTimerTimes(input.value),times=custom.length?custom:defaultTimerSchedule(id).times;
     if(normalize&&custom.length)input.value=custom.map(timerTime).join(', ');
     input.removeAttribute('aria-invalid');hint.classList.remove('field-error');
     const today=new Date();
     const local=times.slice(0,3).map(minute=>new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate(),0,minute)));
-    hint.textContent=(custom.length?'Custom: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
+    hint.textContent=(custom.length?'Custom: ':id==='daily'?'In-game daily reset: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
     return true;
   }catch(error){input.setAttribute('aria-invalid','true');hint.classList.add('field-error');hint.textContent=error.message;return false}
 }
