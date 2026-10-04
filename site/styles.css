@@ -45,3 +45,12 @@ html{scroll-padding-top:calc(var(--header-height,90px) + 16px)}header{position:s
 
 /* Highlight the priority field-boss countdown in the existing responsive bar. */
 .timer-gartua summary{color:var(--gold);font-weight:650}.timer-gartua .timer-icon{color:#ff8888}
+
+/* Started tasks remain separate from completed progress. */
+.task.in-progress{background:linear-gradient(90deg,rgba(237,202,127,.08),transparent);border-radius:8px}
+.task label.task-progress-control{display:flex;align-items:center;gap:9px;width:fit-content;max-width:100%;min-height:44px;margin:5px 0;padding:3px 8px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:8px}
+.task-progress-control input[type=checkbox]{flex-shrink:0;margin:0;width:20px;height:20px}
+.task.in-progress .task-progress-control,.in-progress-count{color:var(--gold)}
+.task-progress-control:focus-within{outline:2px solid var(--gold);outline-offset:2px}
+.in-progress-count{font-size:14px;margin:12px 0 4px}.in-progress-tasks{padding-left:20px;margin:0 0 14px;font-size:13px;color:var(--muted)}.in-progress-tasks li{margin:5px 0}
+.checklist-status{font-size:13px;color:var(--muted);margin:6px 0 0}.checklist-group .task-heading{flex-shrink:1;text-align:right;letter-spacing:0;text-transform:none}
