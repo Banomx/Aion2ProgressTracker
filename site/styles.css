@@ -44,7 +44,7 @@ html{scroll-padding-top:calc(var(--header-height,90px) + 16px)}header{position:s
 }
 
 /* Highlight the priority field-boss countdown in the existing responsive bar. */
-.timer-gartua summary{color:var(--gold);font-weight:650}.timer-gartua .timer-icon{color:#ff8888}
+.timer-gartua summary,.timer-lagta summary{color:var(--gold);font-weight:650}.timer-gartua .timer-icon,.timer-lagta .timer-icon{color:#ff8888}
 
 /* Started tasks remain separate from completed progress. */
 .task.in-progress{background:linear-gradient(90deg,rgba(237,202,127,.08),transparent);border-radius:8px}
