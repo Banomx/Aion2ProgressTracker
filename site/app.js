@@ -125,11 +125,11 @@ function parseTimerTimes(text){
 function defaultTimerSchedule(id){return id==='daily'?{times:[DATA.dailyReset.utcMinutes]}:DATA.fieldBosses[id]||QUESTLOG_SCHEDULE.events[id]}
 function germanyDailyResetTime(now=new Date()){const at=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),0,DATA.dailyReset.utcMinutes));return at.toLocaleTimeString('en-GB',{timeZone:DATA.dailyReset.germanyTimeZone,hour:'2-digit',minute:'2-digit',timeZoneName:'short',hourCycle:'h23'})}
 function timerTime(minutes){return String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0')}
-function nextTimerTimes(times,now=new Date()){
+function nextTimerTimes(times,now=new Date(),secondOffset=0){
   if(!times.length)return [];
   const start=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());
   const upcoming=[];
-  for(let day=0;day<4;day++)for(const minute of times){const at=start+day*86400000+minute*60000;if(at>=now.getTime())upcoming.push(at)}
+  for(let day=0;day<4;day++)for(const minute of times){const at=start+day*86400000+minute*60000+secondOffset*1000;if(at>=now.getTime())upcoming.push(at)}
   return upcoming.slice(0,3);
 }
 function timerCountdown(at,now){const seconds=Math.max(0,Math.ceil((at-now.getTime())/1000)),h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60),s=seconds%60;return (h?h+'h ':'')+(m?m+'m ':'')+s+'s'}
@@ -144,12 +144,12 @@ function renderTimers(){
 function updateTimers(now=new Date()){
   el('daily-reset-reference').textContent='Daily reset: '+timerTime(DATA.dailyReset.utcMinutes)+' UTC · '+germanyDailyResetTime(now)+' in Germany. Automatic checklist resets use your configured UTC hour below.';
   for(const [id] of TIMER_EVENTS){
-    const custom=Object.hasOwn(state.timers,id),schedule=defaultTimerSchedule(id),times=custom?state.timers[id]:schedule.times,next=nextTimerTimes(times,now),count=el('timer-count-'+id);
+    const custom=Object.hasOwn(state.timers,id),schedule=defaultTimerSchedule(id),times=custom?state.timers[id]:schedule.times,seconds=custom?0:schedule.secondOffset||0,next=nextTimerTimes(times,now,seconds),count=el('timer-count-'+id);
     const current=custom?null:activeTimerWindow(schedule,now);
     if(!count)continue;
     count.textContent=current?'ends in '+timerCountdown(current.end,now):(next.length?'in '+timerCountdown(next[0],now):'· Set time');
-    el('timer-schedule-'+id).textContent=(custom?'Custom · ':id==='daily'?'In-game daily reset · ':DATA.fieldBosses[id]?'Reported field boss · ':'QuestLog Global · ')+'UTC: '+times.map(timerTime).join(', ');
-    el('timer-next-'+id).innerHTML=next.map(at=>'<li>'+escapeHTML(new Date(at).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>').join('')+(id==='daily'?'<li>Weekly (QuestLog): '+escapeHTML(nextWeeklyReset(now).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}))+'</li>':'');
+    el('timer-schedule-'+id).textContent=(custom?'Custom · ':id==='daily'?'In-game daily reset · ':DATA.fieldBosses[id]?'Reported field boss · ':'QuestLog Global · ')+'UTC: '+times.map(time=>timerTime(time)+(seconds?':'+String(seconds).padStart(2,'0'):'')).join(', ');
+    el('timer-next-'+id).innerHTML=next.map(at=>'<li>'+escapeHTML(new Date(at).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',...(seconds?{second:'2-digit'}:{}),timeZoneName:'short'}))+'</li>').join('')+(id==='daily'?'<li>Weekly (QuestLog): '+escapeHTML(nextWeeklyReset(now).toLocaleString(undefined,{weekday:'short',hour:'2-digit',minute:'2-digit',...(seconds?{second:'2-digit'}:{}),timeZoneName:'short'}))+'</li>':'');
     let info=el('timer-info-'+id);if(!info){info=document.createElement('p');info.id='timer-info-'+id;el('timer-next-'+id).after(info)}info.textContent=(id==='rift'?'Portal opens for 10 minutes; event lasts one hour. ':'')+(custom?'Manual override. ':id==='daily'?'Confirmed in game on '+DATA.dailyReset.confirmedAt+'. Germany: 09:00 CEST / 08:00 CET. ':DATA.fieldBosses[id]?'Field boss · every '+schedule.intervalHours+' hours. Reported '+schedule.reportedAt+'. '+schedule.source+'. Edit if your server differs. ':'Checked '+new Date(QUESTLOG_SCHEDULE.checkedAt).toLocaleString()+'. '+(now.getTime()-Date.parse(QUESTLOG_SCHEDULE.checkedAt)>7200000?'Source check is overdue. ':''));
   }
 }
@@ -162,12 +162,12 @@ function nextWeeklyReset(now){const schedule=QUESTLOG_SCHEDULE.events.weekly,mid
 function timerFieldFeedback(id,normalize=false){
   const input=el('schedule-'+id),hint=el('schedule-hint-'+id);
   try{
-    const custom=parseTimerTimes(input.value),times=custom.length?custom:defaultTimerSchedule(id).times;
+    const custom=parseTimerTimes(input.value),schedule=defaultTimerSchedule(id),times=custom.length?custom:schedule.times,seconds=custom.length?0:schedule.secondOffset||0;
     if(normalize&&custom.length)input.value=custom.map(timerTime).join(', ');
     input.removeAttribute('aria-invalid');hint.classList.remove('field-error');
     const today=new Date();
-    const local=times.slice(0,3).map(minute=>new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate(),0,minute)));
-    hint.textContent=(custom.length?'Custom: ':id==='daily'?'In-game daily reset: ':DATA.fieldBosses[id]?'Reported field boss default: ':'QuestLog default: ')+times.slice(0,3).map(timerTime).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'})).join(', ');
+    const local=times.slice(0,3).map(minute=>new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate(),0,minute,seconds)));
+    hint.textContent=(custom.length?'Custom: ':id==='daily'?'In-game daily reset: ':DATA.fieldBosses[id]?'Reported field boss default: ':'QuestLog default: ')+times.slice(0,3).map(time=>timerTime(time)+(seconds?':'+String(seconds).padStart(2,'0'):'')).join(', ')+(times.length>3?' + '+(times.length-3)+' more':'')+' UTC · Your time: '+local.map(date=>date.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit',...(seconds?{second:'2-digit'}:{})})).join(', ');
     return true;
   }catch(error){input.setAttribute('aria-invalid','true');hint.classList.add('field-error');hint.textContent=error.message;return false}
 }
