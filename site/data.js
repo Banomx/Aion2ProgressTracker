@@ -990,12 +990,12 @@ const DATA = {
   "fieldBosses": {
     "gartua": {
       "times": [
-        61,
-        781
+        483,
+        1203
       ],
       "intervalHours": 12,
-      "reportedAt": "2026-10-08",
-      "source": "User-reported next spawn at 03:01 CEST on October 9, from a 9h 7m countdown reported at 17:54 CEST on October 8, repeating every 12 hours"
+      "reportedAt": "2026-10-09",
+      "source": "User-reported next spawn around 22:03 CEST on October 9, from a 2h 3m countdown reported at 20:00 CEST, repeating every 12 hours"
     },
     "lagta": {
       "times": [

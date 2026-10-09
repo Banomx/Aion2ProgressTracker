@@ -47,13 +47,13 @@ assert.deepEqual(JSON.parse(deploymentReload.w.localStorage.getItem(storageKey))
 const timerBrowser=await open(deploymentState);const td=timerBrowser.d,tw=timerBrowser.w;
 assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('daily').times),[420]);
 assert.equal(td.querySelector('#spawn-timers .spawn-timer').classList.contains('timer-gartua'),true);
-assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('gartua').times),[61,781]);
-assert.deepEqual(Array.from(tw.timerTest.nextTimerTimes([61,781],new Date('2026-10-08T15:54Z'))),[Date.parse('2026-10-09T01:01Z'),Date.parse('2026-10-09T13:01Z'),Date.parse('2026-10-10T01:01Z')]);
-assert.equal(tw.timerTest.timerCountdown(Date.parse('2026-10-09T01:01Z'),new Date('2026-10-08T15:54Z')),'9h 7m 0s');
+assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('gartua').times),[483,1203]);
+assert.deepEqual(Array.from(tw.timerTest.nextTimerTimes([483,1203],new Date('2026-10-09T18:00Z'))),[Date.parse('2026-10-09T20:03Z'),Date.parse('2026-10-10T08:03Z'),Date.parse('2026-10-10T20:03Z')]);
+assert.equal(tw.timerTest.timerCountdown(Date.parse('2026-10-09T20:03Z'),new Date('2026-10-09T18:00Z')),'2h 3m 0s');
 assert.deepEqual(Array.from(tw.timerTest.defaultTimerSchedule('lagta').times),[64,784]);
 assert.match(td.querySelector('.timer-lagta summary').textContent,/High Commander Lagta/);
 assert.match(td.getElementById('timer-schedule-lagta').textContent,/Reported field boss.*01:04:37, 13:04:37/);
-assert.match(td.getElementById('timer-info-gartua').textContent,/03:01 CEST/);
+assert.match(td.getElementById('timer-info-gartua').textContent,/22:03 CEST/);
 assert.match(td.getElementById('timer-info-lagta').textContent,/03:04:37 CEST/);
 assert.deepEqual(Array.from(tw.timerTest.nextTimerTimes([64,784],new Date('2026-10-08T15:55:07Z'),37)),[Date.parse('2026-10-09T01:04:37Z'),Date.parse('2026-10-09T13:04:37Z'),Date.parse('2026-10-10T01:04:37Z')]);
 assert.equal(tw.timerTest.defaultTimerSchedule('lagta').secondOffset,37);
