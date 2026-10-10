@@ -1010,6 +1010,35 @@ const DATA = {
   },
   "altWeekly": [
     [
+      "morph",
+      "Craft this alt’s 4 weekly Odyle refills",
+      "Use Substance Morphing on this alt to craft its four weekly Odyle refills before reset. Spend enough Odyle first to leave room for refills and ongoing regeneration.",
+      2890,
+      "Before reset",
+      "Per-alt allowance; this shares its checkbox with the Weekly checklist.",
+      {
+        "limit": "4 crafts/week · Per alt",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "energy",
+        "rewards": "Where: Substance Morphing. Reward: Odyle refills for this alt’s dungeon runs. Check the recipe and current costs in game."
+      }
+    ],
+    [
+      "sub",
+      "Buy this alt’s 4 weekly subscriber Odyle refills",
+      "If subscribed, buy the four weekly Odyle refills available to this alt in the subscription shop before reset. Skip this entry if you do not have shop access.",
+      2895,
+      "If subscribed",
+      "Subscription only; counted with optional tasks, not the core total.",
+      {
+        "optional": true,
+        "limit": "4 purchases/week · Per alt · Subscription only",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewardTarget": "energy",
+        "rewards": "Where: subscription shop. Reward: additional Odyle refills for this alt’s dungeon runs. Spend energy before using refills so regeneration is not wasted."
+      }
+    ],
+    [
       "alt-odyle",
       "Watch Odyle and avoid the cap",
       "Check this alt’s Odyle throughout the week. Leave room for regeneration by spending it on useful Conquest runs before it caps; do not wait until the weekly reset to check.",
