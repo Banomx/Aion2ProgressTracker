@@ -1007,5 +1007,90 @@ const DATA = {
       "reportedAt": "2026-10-08",
       "source": "User-reported next spawn at 03:04:37 CEST on October 9, from a 9h 9m 30s countdown reported at 17:55:07 CEST on October 8, repeating every 12 hours"
     }
-  }
+  },
+  "altWeekly": [
+    [
+      "alt-odyle",
+      "Watch Odyle and avoid the cap",
+      "Check this alt’s Odyle throughout the week. Leave room for regeneration by spending it on useful Conquest runs before it caps; do not wait until the weekly reset to check.",
+      null,
+      "Keep regeneration working",
+      "This checkbox records that you handled the routine; keep checking energy as it regenerates.",
+      {
+        "limit": "Ongoing check · Per alt",
+        "rewardTarget": "odyle",
+        "rewards": "Keeping room below the cap prevents wasted Odyle regeneration. Check the Expedition energy display on this alt."
+      }
+    ],
+    [
+      "alt-conquest",
+      "Run useful Conquest dungeons",
+      "Spend this alt’s Odyle in Conquest dungeons at a useful tier it can enter. Collect Kina, crafting materials and equipment drops; use useful drops to improve the alt and keep resources flowing to the main.",
+      null,
+      "Keep regeneration working",
+      null,
+      {
+        "limit": "Run as energy needs spending · Per alt",
+        "rewardTarget": "alt-farm",
+        "rewards": "Where: Expedition → Conquest. Rewards: dungeon equipment, Kina and crafting materials. Transfer eligible resources to the main."
+      }
+    ],
+    [
+      "nightmare",
+      "Run Nightmare on this alt",
+      "Use this alt’s Nightmare tickets before they cap. Gear improvements can help performance, but do not let waiting waste ticket regeneration. Keep Nightmare currency for this character’s planned rewards, including Unique: Zikel’s Apparition.",
+      1710,
+      "Keep regeneration working",
+      "Tickets accumulate; Nightmare is not a weekly-expiring resource.",
+      {
+        "limit": "Lv45 · +2 tickets/day · Cap14 · Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "Nightmare also offers Amplify Stones, Soul Codex rewards, wings and statues.",
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "nightmare"
+      }
+    ],
+    [
+      "trials",
+      "Complete this alt’s Ascension Trials",
+      "Do Ascension Trials on each alt during the week. Use gear improvements to push as far as practical for better rewards.",
+      1735,
+      "Weekly clears",
+      null,
+      {
+        "limit": "3 runs/week · Per character",
+        "source": "https://skycoach.gg/blog/aion-2/articles/checklist-guide",
+        "rewards": "Solo trial rewards include Selentium, Daevanion Crystal fragments and Manastones/Soulstones.",
+        "supplement": "https://talentbuilds.com/aion2/checklist",
+        "rewardTarget": "ascension"
+      }
+    ],
+    [
+      "alt-transfer",
+      "Transfer crafting materials and Kina to the main",
+      "After farming, move eligible crafting materials and Kina from this alt to your main. Use the available transfer method and check binding/transfer rules. The main keeps its accessory-first crafting priority.",
+      null,
+      "Support the main",
+      null,
+      {
+        "limit": "After farming · Per alt",
+        "rewardTarget": "alt-farm",
+        "rewards": "Where: the game’s available resource-transfer/warehouse options. The main receives eligible Kina and crafting materials to fund upgrades."
+      }
+    ],
+    [
+      "alt-corridors",
+      "Optional: look for Abyss Corridors",
+      "If you have time, look for available Abyss Corridors for extra Abyss Points and long-term character power. The existing guide notes that access depends on your faction controlling the required artifacts.",
+      null,
+      "Optional long term",
+      "Optional extra; prioritize avoiding energy and ticket caps and completing weekly trials first.",
+      {
+        "optional": true,
+        "limit": "When available · Optional",
+        "rewardTarget": "ap",
+        "rewards": "Where: available Abyss Corridors. Reward: extra Abyss Points for this character’s long-term progression."
+      }
+    ]
+  ]
 };

@@ -194,6 +194,46 @@ const dailyOnly=JSON.parse(dailyOnlyReset.w.localStorage.getItem(storageKey));
 assert.equal(dailyOnly.inProgress['daily:main:festival'],undefined);assert.equal(dailyOnly.inProgress['weekly:alt1:nightmare'],true);
 pw.dispatchEvent(new pw.StorageEvent('storage',{key:storageKey,newValue:JSON.stringify({...activeSaved,inProgress:{'daily:main:duties':true}})}));
 assert.equal(pd.getElementById('daily-in-progress').textContent,'1 in progress');assert.match(pd.getElementById('daily-in-progress-tasks').textContent,/Duty quests/);
+// Alt plans share established weekly flags and keep extra routines per alt.
+const altBrowser=await open({...deploymentState,checks:{...deploymentState.checks,'weekly:alt1:nightmare':true,'weekly:main:trials':true,'weekly:alt1:contracts':true}}),ad=altBrowser.d,aw=altBrowser.w;
+const altState=()=>JSON.parse(aw.localStorage.getItem(storageKey));
+function altVisit(){ad.getElementById('tab-altweekly').click()}
+function altSelect(id){ad.getElementById('character').value=id;ad.getElementById('character').dispatchEvent(new aw.Event('change'))}
+function altToggle(id,value){const field=ad.getElementById(id);field.checked=value;field.dispatchEvent(new aw.Event('change',{bubbles:true}))}
+altVisit();assert.equal(ad.getElementById('tab-altweekly').getAttribute('aria-selected'),'true');
+assert.match(ad.getElementById('content').textContent,/Choose an alt/);assert.equal(ad.querySelectorAll('.task').length,0);
+ad.querySelector('[data-select-alt="alt1"]').click();assert.equal(ad.getElementById('character').value,'alt1');assert.equal(ad.querySelectorAll('.task').length,6);
+assert.equal(ad.getElementById('check-nightmare').checked,true);assert.match(ad.querySelector('.checklist-status').textContent,/1 \/ 5 core tasks complete/);
+assert.match(ad.getElementById('check-alt-odyle').closest('.task').textContent,/throughout the week/);
+assert.match(ad.getElementById('check-alt-conquest').closest('.task').textContent,/Expedition → Conquest/);
+assert.equal(ad.querySelector('#check-alt-transfer').closest('.task').querySelector('a[href*="youtube"]'),null);
+assert.match(ad.getElementById('content').textContent,/do not need to do everything in one day/);
+altToggle('progress-alt-conquest',true);assert.equal(altState().inProgress['weekly:alt1:alt-conquest'],true);
+altToggle('check-trials',true);ad.getElementById('tab-weekly').click();assert.equal(ad.getElementById('check-trials').checked,true);
+altToggle('progress-nightmare',true);altVisit();assert.equal(ad.getElementById('progress-nightmare').checked,true);assert.equal(ad.getElementById('check-nightmare').checked,false);
+altToggle('check-alt-corridors',true);assert.match(ad.querySelector('.checklist-status').textContent,/1 \/ 5 core tasks complete/);assert.match(ad.querySelector('.checklist-status').textContent,/1 \/ 1 optional/);
+altSelect('main');assert.equal(ad.querySelectorAll('.task').length,0);assert.match(ad.querySelector('[data-select-alt="alt1"]').closest('article').textContent,/1 \/ 5 core tasks complete · 2 in progress/);
+assert.match(ad.querySelector('[data-select-alt="alt1"]').closest('article').textContent,/1 \/ 1 optional/);
+ad.querySelector('[data-select-alt="alt1"]').click();
+const altSaved=altState(),altReload=await open(altSaved);altReload.d.getElementById('tab-altweekly').click();altReload.d.querySelector('[data-select-alt="alt1"]').click();assert.equal(altReload.d.getElementById('check-trials').checked,true);assert.equal(altReload.d.getElementById('progress-alt-conquest').checked,true);
+let altBlob;aw.URL.createObjectURL=blob=>{altBlob=blob;return 'blob:alt-backup'};aw.URL.revokeObjectURL=()=>{};ad.getElementById('export-data').click();const altBackup=JSON.parse(await altBlob.text());assert.deepEqual(altBackup.state,altSaved);
+ad.querySelector('[data-reset="altweekly"]').click();ad.getElementById('cancel-reset').click();assert.deepEqual(altState(),altSaved);
+ad.querySelector('[data-reset="altweekly"]').click();ad.getElementById('confirm-reset').click();
+assert.equal(altState().checks['weekly:alt1:trials'],undefined);assert.equal(altState().inProgress['weekly:alt1:alt-conquest'],undefined);
+assert.equal(altState().checks['weekly:alt1:contracts'],true);assert.equal(altState().checks['weekly:main:trials'],true);assert.equal(altState().checks['weekly:alt6:nightmare'],true);assert.equal(altState().checks['route:2'],true);
+await importFile(altBackup);d.getElementById('confirm-import').click();assert.deepEqual(JSON.parse(w.localStorage.getItem(storageKey)).checks,altSaved.checks);assert.deepEqual(JSON.parse(w.localStorage.getItem(storageKey)).inProgress,altSaved.inProgress);
+await importFile(backup);d.getElementById('confirm-import').click();
+const altExpired=await open({...altSaved,settings:{hour:0,day:3,auto:true},periods:{daily:'2020-01-01',weekly:'2020-01-01'}});
+assert.deepEqual(JSON.parse(altExpired.w.localStorage.getItem(storageKey)).checks,{'route:2':true});assert.deepEqual(JSON.parse(altExpired.w.localStorage.getItem(storageKey)).inProgress,{});
+const noAlts=await open({...deploymentState,characters:{main:'Main',altCount:0,alts:[]}});noAlts.d.getElementById('tab-altweekly').click();assert.match(noAlts.d.getElementById('content').textContent,/Add an alt/);noAlts.d.querySelector('[data-manage-roster]').click();assert.equal(noAlts.d.getElementById('characters-dialog').open,true);
+const fullRoster={...deploymentState,characters:{main:'Main',altCount:50,alts:Array.from({length:50},(_,i)=>'Alt '+(i+1))},checks:{},inProgress:{}};
+for(let i=1;i<=50;i++){
+  for(const task of guideData.daily)fullRoster.checks['daily:alt'+i+':'+task[0]]=true;
+  for(const task of [...guideData.weekly,...guideData.altWeekly])fullRoster.checks['weekly:alt'+i+':'+task[0]]=true;
+}
+assert.ok(Object.keys(fullRoster.checks).length>1000);
+const fullAltBrowser=await open(fullRoster);assert.match(fullAltBrowser.d.getElementById('status').textContent,/Progress loaded/);fullAltBrowser.d.getElementById('tab-altweekly').click();fullAltBrowser.d.querySelector('[data-select-alt="alt50"]').click();assert.match(fullAltBrowser.d.querySelector('.checklist-status').textContent,/5 \/ 5 core tasks complete/);assert.equal(fullAltBrowser.d.getElementById('check-alt-corridors').checked,true);
+for(const task of guideData.altWeekly)assert.ok(knownRewards.has(task[6].rewardTarget));
 const corrupt=await open('{broken');assert.equal(corrupt.w.localStorage.getItem(storageKey),'{broken');assert.equal(corrupt.d.getElementById('import-data').disabled,false);
 const storage=w.localStorage;Object.defineProperty(w,'localStorage',{configurable:true,value:{getItem:storage.getItem.bind(storage),setItem(){throw Error('quota')}}});d.querySelector('[data-view="route"]').click();input=d.querySelector('[data-group="route"]');input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));assert.match(d.getElementById('status').textContent,/storage is unavailable/);assert.equal(d.getElementById('export-data').disabled,false);Object.defineProperty(w,'localStorage',{configurable:true,value:storage});d.getElementById('retry').click();assert.match(d.getElementById('status').textContent,/Saved/);
 assert.equal(requests.length,0);for(const win of windows){await win.happyDOM.abort();win.close()}console.log('Passed: local persistence, names and alt counts, per-character checklists and in-progress status, safe text, backup import/export, invalid imports, resets and storage failures.');
